@@ -1,0 +1,20 @@
+{
+    "comments": [
+        {
+            "comment": "build up data for messages, posts, likes, users"
+        },
+        {
+            "comment": "each user object has 4 properties: id, name, email, password"
+        },
+        {
+            "comment": "each message object has 5 properties: id, userId, recipientId, text, read (boolean)"
+        },
+        {
+            "comment": "likes has id, userId, postId"
+        },
+        {
+            "comment": "posts has id, userId, title, description, imageURL, timeStamp"
+        }
+    ]
+}
+
