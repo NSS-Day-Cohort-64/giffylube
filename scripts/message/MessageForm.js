@@ -14,3 +14,11 @@ to save messages sent through the form
         // return an alert: your message has been sent!
         // once the alert is X'd out, setView function triggers, which will change the "view" property to default view / main page
 // declare and export MessageForm function to build HTML for message form
+
+{import getChosenUser, setView, saveMessage } from "../data/TransientState.js"
+
+const chosenUsers = getChosenUser()
+const messages = saveMessage()
+const preferredView = setView()
+
+
