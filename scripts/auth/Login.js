@@ -19,19 +19,15 @@ document.addEventListener(
             let password = document.getElementById("password").value
             // Make sure password and username are filled out
             if (username.length > 0 && password.length > 0) {
-                console.log(`entered username is ${username}`)
-                console.log(`entered password is ${password}`)
                 // Fetch users from API
                 const users = await fetchUsers()
 
                 // Check to see if username and password match
                 const verifiedUser = users.find(user => user.email === username && user.password === password)
-                console.log(verifiedUser)
                 
                 // Authenticate user if their credentials are in database
                 if (verifiedUser) {
-                    console.log("here is who you are logging in as:")
-                    console.log(verifiedUser)
+                    // Set the verified user as the current user in transient state
                     setCurrentUser(verifiedUser)
                     // Broadcast a custom event that the state has changed so the browser can listen and update
                     const customEvent = new CustomEvent("stateChanged")

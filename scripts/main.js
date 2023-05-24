@@ -32,8 +32,7 @@ const renderApp = async () => {
   let UI = ""
   // Get the current user(or check if there is one)
   const thisUser = getCurrentUser()
-  console.log("Here is the current user:")
-  console.log(thisUser)
+  
   // Iterate through the users and check if the user has been authenticated
   const users = await fetchUsers()
   console.log("Here are all of the users:")
@@ -43,10 +42,13 @@ const renderApp = async () => {
     if (verifiedUser) {
       // If the user has been authenticated:
       // UI = GiffyLube()
+      console.log("User authenticated...")
+      console.log(`You are logged in as ${verifiedUser.name}`)
       UI = GiffyLube()
     } else {
       // UI = Login()
-      UI = `<div>User Not Authenticated. Showing main page to test code</div>` + GiffyLube()
+      console.log("User not authenticated")
+      UI = Login()
     }
     
     
@@ -63,3 +65,10 @@ renderApp()
 // Add an event listener that will listen for a custom event that dispatches every time the application ///
 // state has changed. When the event happens, invoke the renderApp() function to re-render the HTML ///////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.addEventListener(
+  "stateChanged",
+  (event) => {
+      console.log(`State has changed. Regenerating HTML...`)
+      renderApp()
+  }
+)
