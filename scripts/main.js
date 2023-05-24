@@ -1,6 +1,7 @@
 // import GiffyLube from './GiffyLube.js’
 // import fetchUsers from './data/TransientState.js'
 import { GiffyLube } from "./GiffyLube.js"
+import { Login } from "./auth/Login.js"
 import { fetchUsers, getCurrentUser } from "./data/TransientState.js"
 
 /* The main job of this module is to invoke one of two functions within the renderApp function that will render 
