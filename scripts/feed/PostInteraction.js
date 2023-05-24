@@ -6,5 +6,5 @@ handles the rendering and interaction of a post element
 // attach 2 click event listeners -- both outside any function:
     // Delete button
     // Favorite button
-// declare Post function
-// export Post function
+// declare PostInteraction function
+// export PostInteraction function to PostList

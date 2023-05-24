@@ -5,10 +5,12 @@ handles toggling the display of the form, and provides functionality
 to save messages sent through the form
 */
 
-// import getUsers and saveMessage functions from ./data/TransientState.js
-// attach event listener for three click events -- all outside any function: 
-    // Close button
+// import getUsers, saveMessage, setView functions from ./data/TransientState.js
+// attach event listener for two click events -- all outside any function: 
     // Cancel button
-    // Save button 
-// declare MessageForm function
-// export MessageForm function
+        // will trigger the setView function, which will change the "view" property to default view / main page
+    // Send button
+        // will trigger the saveMessage function, which will retrieve the values from user inputs and post them to the API
+        // return an alert: your message has been sent!
+        // once the alert is X'd out, setView function triggers, which will change the "view" property to default view / main page
+// declare and export MessageForm function to build HTML for message form

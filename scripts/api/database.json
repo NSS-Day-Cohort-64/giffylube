@@ -13,7 +13,7 @@
             "comment": "likes has id, userId, postId"
         },
         {
-            "comment": "posts has id, userId, title, description, imageURL, timeStamp"
+            "comment": "posts has id, userId, title, description, imageURL, year"
         }
     ]
 }
