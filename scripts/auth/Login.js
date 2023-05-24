@@ -14,7 +14,7 @@ it with a list of users, and stores the user's id if a match is found
 export const LoginForm = () => {
 
     let htmlString = `
-        <div class="loginHeader"><h1>Login Form</h1></div>  
+        <div class="loginHeader"><h1>Login to GiffyLube</h1></div>  
         <form id="loginForm">  
             <div class="Login">   
                 <div class="Login__row Login__username">
