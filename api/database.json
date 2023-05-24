@@ -25,7 +25,14 @@
             "password": "donthavekids!"
         }
     ],
-      "messages": [],
+      "messages": [
+        {
+            "userId": 3,
+            "recipientId": 2,
+            "read": false,
+            "text": "dskhfbak"
+          }
+      ],
 
       "likes": [],
       

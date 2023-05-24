@@ -43,3 +43,12 @@ const renderApp = async () => {
 // Add an event listener that will listen for a custom event that dispatches every time the application ///
 // state has changed. When the event happens, invoke the renderApp() function to re-render the HTML ///////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+import { NavBarHTML } from "./nav/NavBar.js"
+//test code
+const container = document.querySelector("#container")
+const test = await NavBarHTML()
+container.innerHTML = test
