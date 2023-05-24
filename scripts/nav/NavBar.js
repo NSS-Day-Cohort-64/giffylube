@@ -28,8 +28,9 @@ export const NavBarHTML = async () => {
     const messages = await fetchMessages()
 
     const userMessages = messages.filter(
-        (message) =>
-            message.recipientId === currentUser.userId
+        (message) => {
+            return message.recipientId === currentUser.userId
+        }
     )
 
     const navBar = `<img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
