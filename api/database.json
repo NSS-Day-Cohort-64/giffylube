@@ -25,25 +25,9 @@
             "password": "donthavekids!"
         }
     ],
-      "messages": [
+      "messages": [],
+
+      "likes": [],
       
-      ],
-      "likes": [
-        
-      ],
-      "favorites": [
-        
-        
-    ]
+      "favorites": []
 }
-
-
-
-//     "comment": "each message object has 5 properties: id, userId, recipientId, text, read (boolean)"
-// },
-// {
-//     "comment": "likes has id, userId, postId"
-// },
-// {
-//     "comment": "posts has id, userId, title, description, imageURL, year"
-// } 
