@@ -1,10 +1,10 @@
 // imports getMessages and getUsers functions from ./data/TransientState.js
-import { getMessages, getUsers } from './data/TransientState.js';
+import { fetchMessages, fetchUsers } from './data/TransientState.js';
 
 // declare and export MessageList function that generates an HTML string representing a list of messages
 export function MessageList() {
-  const messages = getMessages();
-  const users = getUsers();
+  const messages = fetchMessages();
+  const users = fetchUsers();
 
   const htmlStrings = messages.map(function (message) {
     const { userId, text } = message;
