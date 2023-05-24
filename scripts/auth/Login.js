@@ -3,12 +3,11 @@ a basic implementation of a login form that listens
 for a button click event, retrieves user input, compares 
 it with a list of users, and stores the user's id if a match is found
 */
-
 import { fetchUsers, setCurrentUser } from "../data/TransientState.js"
 
 
 
-// imports getUsers function from ./data/TransientState.js
+
 
 // attach "click" event listener for Login button
 document.addEventListener(
@@ -34,6 +33,9 @@ document.addEventListener(
                     console.log("here is who you are logging in as:")
                     console.log(verifiedUser)
                     setCurrentUser(verifiedUser)
+                    // Broadcast a custom event that the state has changed so the browser can listen and update
+                    const customEvent = new CustomEvent("stateChanged")
+                    document.dispatchEvent(customEvent)
                 } else {
                     window.alert("Invalid user credentials")
                 }
