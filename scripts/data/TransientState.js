@@ -38,28 +38,28 @@ const transientState = {
     transientState.currentUser.email = currentUserObject.email
   }
 
-  export const setMessage = (userId, recipientId, text) => {
-    transientState.message.userId = message.userId
-    transientState.message.recipientId = message.recipientId
-    transientState.message.text = message.text
+  export const setMessage = (messageObject) => {
+    transientState.message.userId = messageObject.userId
+    transientState.message.recipientId = messageObject.recipientId
+    transientState.message.text = messageObject.text
   }
   
   export const setView = (view) => {
     transientState.view = view
   }
   
-  export const setPost = (userId, title, description, imageUrl, year) => {
-    transientState.post.userId = post.userId
-    transientState.post.title = post.title
-    transientState.post.description = post.description
-    transientState.post.imageUrl = post.imageUrl
-    transientState.post.year = post.year
+  export const setPost = (postObject) => {
+    transientState.post.userId = postObject.userId
+    transientState.post.title = postObject.title
+    transientState.post.description = postObject.description
+    transientState.post.imageUrl = postObject.imageUrl
+    transientState.post.year = postObject.year
   
   }
 
-  export const setLike = (userId, postId) => {
-    transientState.like.userId = like.userId
-    transientState.like.postId = like.postId
+  export const setLike = (likeObject) => {
+    transientState.like.userId = likeObject.userId
+    transientState.like.postId = likeObject.postId
   }
   
 /////////////////GETTER FUNCTIONS FROM TRANSIENT STATE////////////////////////////////////
