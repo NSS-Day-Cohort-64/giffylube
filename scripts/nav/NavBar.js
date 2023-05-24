@@ -2,17 +2,7 @@
 sets up event listeners and returns HTML markup for the navigation bar
 */
 
-import { fetchMessages, getCurrentUser, setCurrentUser } from "../data/TransientState.js"
-
-//temporary imports
-
-
-let tempCurrentUser = {
-    "userId": 2,
-    "name": "Daddy",
-    "email": "daddy@daddy.com"
-}
-setCurrentUser(tempCurrentUser)
+import { fetchMessages, getCurrentUser } from "../data/TransientState.js"
 
 
 // import clearFilters (if Footer happens), getMessages, setView, displayUsername from ./data/TransientState.js

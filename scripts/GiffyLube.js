@@ -1,4 +1,5 @@
 // import NavBar from ./nav/NavBar.js
+import { NavBarHTML } from "./nav/NavBar.js"
 // import PostEntry from ./feed/PostEntry.js
 // import PostList from ./feed/PostList.js
 // import Footer from ./nav/Footer.js
@@ -20,8 +21,10 @@
         3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
         4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
 */
-export const GiffyLube = () => {
-    let htmlList = ""
+export const GiffyLube = async () => {
+    const navBar = await NavBarHTML()
+    
+    let htmlList = `${navBar}`
     htmlList += `
     <h1>This will be the main page</h1>
     `

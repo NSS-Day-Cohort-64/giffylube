@@ -65,9 +65,3 @@ renderApp()
 
 
 
-
-import { NavBarHTML } from "./nav/NavBar.js"
-//test code
-const container = document.querySelector("#container")
-const test = await NavBarHTML()
-container.innerHTML = test
