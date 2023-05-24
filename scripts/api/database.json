@@ -1,20 +1,49 @@
 {
-    "comments": [
+    "users": [
         {
-            "comment": "build up data for messages, posts, likes, users"
+            "id": 1,
+            "name" : "Daddy",
+            "email": "giffydaddy@giffydads.co.uk",
+            "password": "purplebeard"
         },
         {
-            "comment": "each user object has 4 properties: id, name, email, password"
+            "id": 2,
+            "name" : "Sarah",
+            "email": "Sarah@giffylube.com",
+            "password": "peanutbutter"
         },
         {
-            "comment": "each message object has 5 properties: id, userId, recipientId, text, read (boolean)"
+            "id": 3,
+            "name" : "Alice Ecila",
+            "email": "lilbballchic229@aol.com",
+            "password": "slamdunk"
         },
         {
-            "comment": "likes has id, userId, postId"
-        },
-        {
-            "comment": "posts has id, userId, title, description, imageURL, year"
+            "id": 4,
+            "name" : "Mommy Myers",
+            "email": "momsgotitrough@aol.com",
+            "password": "donthavekids!"
         }
+    ],
+      "messages": [
+      
+      ],
+      "likes": [
+        
+      ],
+      "favorites": [
+        
+        
     ]
 }
 
+
+
+//     "comment": "each message object has 5 properties: id, userId, recipientId, text, read (boolean)"
+// },
+// {
+//     "comment": "likes has id, userId, postId"
+// },
+// {
+//     "comment": "posts has id, userId, title, description, imageURL, year"
+// } 
