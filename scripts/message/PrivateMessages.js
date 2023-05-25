@@ -13,34 +13,37 @@ import { fetchMessages, fetchUsers, getCurrentUser } from './data/TransientState
 // do we need the return in the .filter function?
 // make a new variable for the new array of filtered messages and then iterate over that array with .map
 
-export async function MessageList(currentUser) {
-    const messages = await fetchMessages();
-    const users = await fetchUsers();
-    const currentUser = getCurrentUser
+export const MessageList = async (currentUser) => {
+  const messages = await fetchMessages();
+  const users = await fetchUsers();
+  const currentUser = getCurrentUser();
+
+  const filteredMessages = messages.filter((message) => {
+    // Filter messages based on the recipientId matching the currentUser's userId
+    return message.recipientId === currentUser.userId;
+  });
   
-    const filteredMessages = messages.filter(function (message) {
-      // Filter messages based on the recipientId matching the currentUser's userId
-      return message.recipientId === currentUser.userId;
-    });
+  const htmlStrings = filteredMessages.map((message) => {
+    const { userId, text } = message;
   
-    const htmlStrings = filteredMessages.map(function (message) {
-      const { userId, text } = message;
+    const sender = users.find((user) => user.id === userId);
+    const senderName = sender ? sender.name : 'Unknown User';
   
-      const htmlString = `
-        <div class="message">
-          <span class="user">${users[userId]}</span>
-          <p class="message-text">${text}</p>
-          <button class="reply-button">REPLY</button>
-        </div>
-      `;
+    const htmlString = `
+      <div class="message">
+        <span class="user">${senderName}</span>
+        <p class="message-text">${text}</p>
+        <button class="reply-button">REPLY</button>
+      </div>
+    `;
   
-      return htmlString;
-    });
+    return htmlString;
+  });
   
-    const resultString = htmlStrings.join('');
+  const resultString = htmlStrings.join('');
   
-    return resultString;
-  }
+  return resultString;
+  
   
   
   // attach click event listener for reply button
