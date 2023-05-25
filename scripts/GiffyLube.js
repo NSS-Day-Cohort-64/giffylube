@@ -27,9 +27,8 @@ export const GiffyLube = async () => {
     //check these conditions of the transientState to determine which page to generate 
         //1. If transientState.view===viewMessages, then invoke function that generates all the HTML for the inbox page and add it to the htmlString
         if(view === "viewMessages") {
-            htmlList += `<section class="messages
-                    >${messages}<
-                    /section>`
+            htmlList += `<section class="messages"
+                    >${messages}</section>`
         }
 
         //2. If transientState.view===createMessage, then invoke function that generates all the HTML for the create message page and add it to the htmlString
