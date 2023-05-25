@@ -3,7 +3,7 @@ handles the rendering and interaction of a post element
 */
 
 // import deletePost, favoritePost from ./data/TransientState.js
-import { deletePost, favoritePost } from './data/TransientState.js';
+import { deletePost, favoritePost } from '../data/TransientState.js';
 
 // attach 2 click event listeners -- both outside any function:
     // Delete button

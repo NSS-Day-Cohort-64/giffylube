@@ -4,7 +4,7 @@ and generates HTML for each post using the `Post` component returned as a string
 */
 
 // import getLikes, getPosts, getUsers from ./data/TransientState.js
-import { fetchLikes, fetchPosts, fetchUsers } from './data/TransientState.js';
+import { fetchLikes, fetchPosts, fetchUsers } from '../data/TransientState.js';
 import { PostInteraction } from './PostInteraction.js';
 
 // declare and export PostList function
