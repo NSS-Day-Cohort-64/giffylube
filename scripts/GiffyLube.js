@@ -3,7 +3,7 @@
 // import PostList from ./feed/PostList.js
 // import Footer from ./nav/Footer.js
 // import MessageForm from ./message/MessageForm.js
-// import PrivateMessages from ./message/PrivateMessages.js
+// import MessageList from ./message/PrivateMessages.js
 // import getView function from ./data/TransientState.js
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,8 +20,6 @@
         3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
         4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
 */
-
-// export GiffyLube function
 
 // click event listener for "have a gif to post?" to change transient state (outside any function)
 
