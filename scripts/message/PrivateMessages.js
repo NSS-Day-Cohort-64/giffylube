@@ -43,7 +43,8 @@ export const MessageList = async () => {
   const resultString = htmlStrings.join('');
   
   return resultString;
-  
+
+}
   
   
   // attach click event listener for reply button
