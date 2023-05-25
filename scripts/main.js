@@ -42,10 +42,10 @@ const renderApp = async () => {
     if (verifiedUser) {
       // If the user has been authenticated:
       // UI = GiffyLube()
-      UI = GiffyLube()
+      UI = await GiffyLube()
     } else {
       // UI = Login()
-      UI = `<div>User Not Authenticated. Showing main page to test code</div>` + GiffyLube()
+      UI = `<div>User Not Authenticated. Showing main page to test code</div>` + await GiffyLube()
     }
     
     
@@ -62,3 +62,6 @@ renderApp()
 // Add an event listener that will listen for a custom event that dispatches every time the application ///
 // state has changed. When the event happens, invoke the renderApp() function to re-render the HTML ///////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
