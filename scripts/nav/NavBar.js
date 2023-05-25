@@ -7,16 +7,40 @@ import { fetchMessages, getCurrentUser } from "../data/TransientState.js"
 
 // import clearFilters (if Footer happens), getMessages, setView, displayUsername from ./data/TransientState.js
 
-// attach 4 click event listeners outside of any functions for
+//////////////////// event listeners /////////////////////////////////////////////////////////////
 // Notifications - set transient state view to viewMessages
+    //event listener function
+
+    //listen for event
+
 
 // show how many messages view getMessages
+    //event listener function
+
+    //listen for event
+
 // Create Message pen icon - change view to createMessage
+    //event listener function
+
+    //listen for event
+
 // Logout - reset current user to 0
+    //event listener function
+
+    //listen for event
+
 // Logo - reset transient state view to defaultView
+    //event listener function
 
-// declare and export NavBar function
+    //listen for event
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////// declare and export NavBar function which generates all the HTML for the NavBar/////////////////////
 export const NavBarHTML = async () => {
     const currentUser = getCurrentUser()
     const messages = await fetchMessages()
@@ -34,8 +58,8 @@ export const NavBarHTML = async () => {
         > <div>${currentUser.name}</div
         > <button type="button">Logout</button>`
 
-        return navBar
+    return navBar
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
