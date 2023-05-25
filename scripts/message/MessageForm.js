@@ -18,8 +18,8 @@ to save messages sent through the form
 import { getChosenUser, setView, saveMessage , fetchUsers} from "../data/TransientState.js"
 
 const chosenUsers = getChosenUser()
-const savedMessages = saveMessage()
-const preferredView = setView()
+// const savedMessages = saveMessage() This function should only be called in the event listener -Ryan
+// const preferredView = setView() This function should only be called in the event listener -Ryan
 
 export const MessageForm = async () => {
     const users = await fetchUsers()
