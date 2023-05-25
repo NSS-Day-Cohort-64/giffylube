@@ -1,8 +1,9 @@
 // import GiffyLube from './GiffyLube.js’
 // import fetchUsers from './data/TransientState.js'
 import { GiffyLube } from "./GiffyLube.js"
+import { Login } from "./auth/Login.js"
 import { fetchUsers, getCurrentUser } from "./data/TransientState.js"
-
+import { MessageForm } from "./message/MessageForm.js"
 /* The main job of this module is to invoke one of two functions within the renderApp function that will render 
     HTML to the DOM. Depending on if the user has been authenticated, they will either be taken to the login 
     view or to the main feed. An event listener will cause the renderApp function to be invoked every time
@@ -27,12 +28,19 @@ const renderApp = async () => {
     will be added in the document and assign it to a variable called container 
   */
   const container = document.querySelector("#container")
-  // Assign an empty html string to a variable called 'UI'
+  // // Assign an empty html string to a variable called 'UI'
+  
+  // //Daniel here, experimenting with my function.
+
+  // const MessageFormHTML = await MessageForm()
+  // const composedHTML = `<h1>Daniel Experiment</h1>
+  // <section>${MessageFormHTML}</section>`
+  
+  // //End of my experimentation
   let UI = ""
   // Get the current user(or check if there is one)
   const thisUser = getCurrentUser()
-  console.log("Here is the current user:")
-  console.log(thisUser)
+  
   // Iterate through the users and check if the user has been authenticated
   const users = await fetchUsers()
   console.log("Here are all of the users:")
@@ -42,10 +50,13 @@ const renderApp = async () => {
     if (verifiedUser) {
       // If the user has been authenticated:
       // UI = GiffyLube()
+      console.log("User authenticated...")
+      console.log(`You are logged in as ${verifiedUser.name}`)
       UI = await GiffyLube()
     } else {
       // UI = Login()
-      UI = `<div>User Not Authenticated. Showing main page to test code</div>` + await GiffyLube()
+      console.log("User not authenticated")
+      UI = Login()
     }
     
     
@@ -54,6 +65,9 @@ const renderApp = async () => {
   // Add the html to the DOM:
   // container.innerHTML = UI
   container.innerHTML = UI
+
+  // // //Daniel Experiment
+  // container.innerHTML = composedHTML
 }
 
 // Invoke renderApp()
@@ -62,6 +76,10 @@ renderApp()
 // Add an event listener that will listen for a custom event that dispatches every time the application ///
 // state has changed. When the event happens, invoke the renderApp() function to re-render the HTML ///////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
+document.addEventListener(
+  "stateChanged",
+  (event) => {
+      console.log(`State has changed. Regenerating HTML...`)
+      renderApp()
+  }
+)
