@@ -37,9 +37,9 @@ export const PostList = async () => {
         </div>
         <div class="post-interactions">
           <div class="user">${userName}</div>
-//          <div class="likes">Likes: ${likesCount}</div>
+        <div class="likes">Likes: ${likesCount}</div>
 //          ${PostInteraction(post.postId)}
-//        </div>
+       </div>
       </div>
     `;
 
