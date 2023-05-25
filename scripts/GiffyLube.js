@@ -20,6 +20,14 @@
         3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
         4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
 */
+export const GiffyLube = () => {
+    let htmlList = ""
+    htmlList += `
+    <h1>This will be the main page</h1>
+    `
+    return htmlList
+}
+// export GiffyLube function
 
 // click event listener for "have a gif to post?" to change transient state (outside any function)
 
