@@ -28,7 +28,7 @@ export const PostList = async () => {
 
         // generate HTML for the Post component and interactions
         const postHtml = `
-      <div class="post">
+        <div class="post">
         <div class="post-content">
           <h2>${title}</h2>
           <p>${description}</p>
@@ -37,9 +37,9 @@ export const PostList = async () => {
         </div>
         <div class="post-interactions">
           <div class="user">${userName}</div>
-          <div class="likes">Likes: ${likesCount}</div>
-          ${PostInteraction(post.postId)}
-        </div>
+//          <div class="likes">Likes: ${likesCount}</div>
+//          ${PostInteraction(post.postId)}
+//        </div>
       </div>
     `;
 
