@@ -3,7 +3,7 @@
 import { GiffyLube } from "./GiffyLube.js"
 import { Login } from "./auth/Login.js"
 import { fetchUsers, getCurrentUser } from "./data/TransientState.js"
-import { MessageForm } from "./message/MessageForm.js"
+
 /* The main job of this module is to invoke one of two functions within the renderApp function that will render 
     HTML to the DOM. Depending on if the user has been authenticated, they will either be taken to the login 
     view or to the main feed. An event listener will cause the renderApp function to be invoked every time

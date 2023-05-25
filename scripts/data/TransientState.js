@@ -2,7 +2,7 @@
 artist formerly known as "provider"
 */
 
-const transientState = {
+const initialTransientState = {
   "currentUser": {
     "userId": 0,
     "name": "",
@@ -25,8 +25,19 @@ const transientState = {
     "userId": 0,
     "postId": 0
   },
-  "view": ""
+  "view": "defaultView"
 }
+
+////////////MAKE DEEP COPY OF transientState with spread operator///////////////////////////
+let transientState = {...initialTransientState}
+
+
+////////////FUNCTION TO RESET transientState back to initial/////////////////////////////
+export const resetTransientState = () => {
+    transientState = {...initialTransientState}
+    return transientState
+}
+
 
 ///////////SETTER FUNCTIONS/////////////////////////////////////
 
@@ -63,6 +74,10 @@ const transientState = {
   }
   
 /////////////////GETTER FUNCTIONS FROM TRANSIENT STATE////////////////////////////////////
+
+  export const getTransientState = () => {
+    return transientState
+  }
 
   export const getMessage = () => {
     return transientState.message
