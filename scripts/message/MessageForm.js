@@ -18,16 +18,31 @@ to save messages sent through the form
 
 
 
-import { getChosenUser, setView, saveMessage , fetchUsers, saveLike} from "../data/TransientState.js"
+import { getChosenUser, setMessage, setView, saveMessage , fetchUsers, saveLike, getCurrentUser} from "../data/TransientState.js"
 
-const chosenUsers = getChosenUser()
-const savedMessages = saveMessage()
-const preferredView = setView()
 
-const sendMessageButtonLink = (clickEvent) => {
-    if(clickEvent.target.id === "send") {
-       getChosenUser()
-        saveMessage()
+
+// const documentingSetMessage = (event) => {
+//     if(clickEvent.target.id === "send") {
+//     setMessage(parseInt(clickEvent.target.value))
+// }
+// }
+const sendMessageButtonLink = async (clickEvent) => {
+     if(clickEvent.target.id === "send") {
+        let message = document.getElementById("message").value
+        let currentUser = getCurrentUser()
+        let recipientId = document.getElementById("chooseRecipient").value
+
+        let messageObject = {
+        "userId": currentUser.userId,
+        "recipientId": recipientId,
+        "read": false,
+        "text": message}
+            if(message.length > 0) {
+
+    setMessage(messageObject)    
+    await saveMessage()
+}
         window.alert(`Your message has been sent`)
         setView(defaultView)
         const customEvent = new CustomEvent("stateChanged")
@@ -41,6 +56,14 @@ const sendMessageButtonLink = (clickEvent) => {
 
 }
 
+
+   
+
+           
+
+
+
+
 export const MessageForm = async () => {
     const users = await fetchUsers()
 
@@ -50,13 +73,13 @@ export const MessageForm = async () => {
     <select id="messageRecipientDropdown"> 
     <option value="0">List of Users`
     for (const user of users) {
-      html +=  `<option value = "${user.id}">${user.name}</option>`
+      html +=  `<option value = "${user.id}" id = "chooseRecipient" >${user.name}</option>`
     }
 
     document.addEventListener("click", sendMessageButtonLink)
 
 
-return html += `</select></section>
+html += `</select></section>
 <section>
 <label for="username">Name:</label><br>
 <input type="text" id="name"><br>
@@ -66,6 +89,11 @@ return html += `</select></section>
 <input type="text" id="message"><br>
 <button id="send">Send</button>
 <button id="cancel">Cancel</button>
-
 </section>
-` }
+` 
+
+return html}
+
+
+
+

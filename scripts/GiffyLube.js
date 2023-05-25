@@ -1,5 +1,8 @@
 // import NavBar from ./nav/NavBar.js
 import { NavBarHTML } from "./nav/NavBar.js"
+
+import { MessageForm } from "./message/MessageForm.js"
+
 // import PostEntry from ./feed/PostEntry.js
 // import PostList from ./feed/PostList.js
 // import Footer from ./nav/Footer.js
