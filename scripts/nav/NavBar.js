@@ -2,7 +2,7 @@
 sets up event listeners and returns HTML markup for the navigation bar
 */
 
-import { fetchMessages, getCurrentUser, setView, resetTransientState, getTransientState } from "../data/TransientState.js"
+import { fetchMessages, getCurrentUser, setView, resetTransientState, getTransientState, setCurrentUser } from "../data/TransientState.js"
 
 
 // import clearFilters (if Footer happens), getMessages, setView, displayUsername from ./data/TransientState.js
@@ -13,7 +13,7 @@ const transientState = getTransientState()
 //event listener function
 const clickNotifications = (clickEvent) => {
     if (clickEvent.target.id === "inbox") {
-        setView(viewMessages)
+        setView("viewMessages")
 
         const customEvent = new CustomEvent("stateChanged")
         document.dispatchEvent(customEvent)
@@ -28,7 +28,7 @@ document.addEventListener("click", clickNotifications)
 //event listener function
 const clickSendMessage = (clickEvent) => {
     if (clickEvent.target.id === "sendMessage") {
-        setView(createMessage)
+        setView("createMessage")
 
         const customEvent = new CustomEvent("stateChanged")
         document.dispatchEvent(customEvent)
@@ -43,6 +43,12 @@ document.addEventListener("click", clickSendMessage)
 //event listener function
 const clickLogout = (clickEvent) => {
     if (clickEvent.target.id === "logout") {
+        const resetCurrentUser = {
+            "userId": 0,
+            "name": "",
+            "email": ""
+        }
+        setCurrentUser(resetCurrentUser)
         resetTransientState()
 
         const customEvent = new CustomEvent("stateChanged")
@@ -58,7 +64,7 @@ document.addEventListener("click", clickLogout)
 //event listener function
 const clickLogo = (clickEvent) => {
     if (clickEvent.target.id === "logo") {
-        setView(defaultView)
+        setView("defaultView")
 
         const customEvent = new CustomEvent("stateChanged")
         document.dispatchEvent(customEvent)

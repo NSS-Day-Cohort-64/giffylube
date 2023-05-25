@@ -1,5 +1,7 @@
 // import NavBar from ./nav/NavBar.js
 import { getView } from "./data/TransientState.js"
+import { PostList } from "./feed/PostList.js"
+import { MessageForm } from "./message/MessageForm.js"
 import { MessageList } from "./message/PrivateMessages.js"
 import { NavBarHTML } from "./nav/NavBar.js"
 // import PostEntry from ./feed/PostEntry.js
@@ -14,6 +16,9 @@ import { NavBarHTML } from "./nav/NavBar.js"
 export const GiffyLube = async () => {
     const navBar = await NavBarHTML()
     const messages = await MessageList()
+    const messageForm = await MessageForm()
+    const posts = await PostList()
+
     const view = getView()
     
     //Create variable for htmlList = NavBar 
@@ -22,28 +27,26 @@ export const GiffyLube = async () => {
     //check these conditions of the transientState to determine which page to generate 
         //1. If transientState.view===viewMessages, then invoke function that generates all the HTML for the inbox page and add it to the htmlString
         if(view === "viewMessages") {
-            htmlList += `${}`
+            htmlList += `${messages}`
         }
 
         //2. If transientState.view===createMessage, then invoke function that generates all the HTML for the create message page and add it to the htmlString
-        if(view === "createMessage") {
-            htmlList += `${}`
+        if (view === "createMessage") {
+            htmlList += `${messageForm}`
         }
 
         //3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
-        if(view === "postGif") {
+       /* if(view === "postGif") {
             htmlList += `${}`
-        }
+        } */
         
         //4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
-        if(view === "defaultView") {
-            htmlList += `${}`
+        if (view === "defaultView") {
+            htmlList += `
+            <h2 class="postGif">Have a gif to post?</h2>
+            ${posts}`
         }
         
-
-    htmlList += `
-    <h1>This will be the main page</h1>
-    `
     return htmlList
 }
 

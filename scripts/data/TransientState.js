@@ -25,7 +25,7 @@ const initialTransientState = {
     "userId": 0,
     "postId": 0
   },
-  "view": ""
+  "view": "defaultView"
 }
 
 ////////////MAKE DEEP COPY OF transientState with spread operator///////////////////////////
