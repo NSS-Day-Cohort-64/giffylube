@@ -31,7 +31,7 @@ export const MessageList = async () => {
   
     const htmlString = `
       <div class="message">
-        <span class="user">${senderName}</span>
+        <span class="user">From: ${senderName}</span>
         <p class="message-text">${text}</p>
         <button class="reply-button">REPLY</button>
       </div>
