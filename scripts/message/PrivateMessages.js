@@ -13,7 +13,7 @@ import { fetchMessages, fetchUsers, getCurrentUser } from './data/TransientState
 // do we need the return in the .filter function?
 // make a new variable for the new array of filtered messages and then iterate over that array with .map
 
-export const MessageList = async (currentUser) => {
+export const MessageList = async () => {
   const messages = await fetchMessages();
   const users = await fetchUsers();
   const currentUser = getCurrentUser();
