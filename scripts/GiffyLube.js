@@ -27,12 +27,16 @@ export const GiffyLube = async () => {
     //check these conditions of the transientState to determine which page to generate 
         //1. If transientState.view===viewMessages, then invoke function that generates all the HTML for the inbox page and add it to the htmlString
         if(view === "viewMessages") {
-            htmlList += `${messages}`
+            htmlList += `<section class="messages
+                    >${messages}<
+                    /section>`
         }
 
         //2. If transientState.view===createMessage, then invoke function that generates all the HTML for the create message page and add it to the htmlString
         if (view === "createMessage") {
-            htmlList += `${messageForm}`
+            htmlList += `<section class="messageForm"
+                >${messageForm}<
+                /section>`
         }
 
         //3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
@@ -44,7 +48,8 @@ export const GiffyLube = async () => {
         if (view === "defaultView") {
             htmlList += `
             <h2 class="postGif">Have a gif to post?</h2>
-            ${posts}`
+            <section class="posts"
+            >${posts}</section>`
         }
         
     return htmlList
