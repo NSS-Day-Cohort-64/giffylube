@@ -2,40 +2,72 @@
 sets up event listeners and returns HTML markup for the navigation bar
 */
 
-import { fetchMessages, getCurrentUser } from "../data/TransientState.js"
+import { fetchMessages, getCurrentUser, setView, resetTransientState, getTransientState } from "../data/TransientState.js"
 
 
 // import clearFilters (if Footer happens), getMessages, setView, displayUsername from ./data/TransientState.js
 
 //////////////////// event listeners /////////////////////////////////////////////////////////////
-// Notifications - set transient state view to viewMessages
-    //event listener function
-    const 
+const transientState = getTransientState()
+// Inbox Notifications - set transient state view to viewMessages
+//event listener function
+const clickNotifications = (clickEvent) => {
+    if (clickEvent.target.id === "inbox") {
+        setView(viewMessages)
 
-    //listen for event
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
+        
+        console.log(transientState)
+    }
+}
+//listen for event
+document.addEventListener("click", clickNotifications)
 
+// Send Message - change view to createMessage
+//event listener function
+const clickSendMessage = (clickEvent) => {
+    if (clickEvent.target.id === "sendMessage") {
+        setView(createMessage)
 
-// show how many messages view getMessages
-    //event listener function
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
 
-    //listen for event
-
-// Create Message pen icon - change view to createMessage
-    //event listener function
-
-    //listen for event
+        console.log(transientState)
+    }
+}
+//listen for event
+document.addEventListener("click", clickSendMessage)
 
 // Logout - reset current user to 0
-    //event listener function
+//event listener function
+const clickLogout = (clickEvent) => {
+    if (clickEvent.target.id === "logout") {
+        resetTransientState()
 
-    //listen for event
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
+
+        console.log(transientState)
+    }
+}
+//listen for event
+document.addEventListener("click", clickLogout)
 
 // Logo - reset transient state view to defaultView
-    //event listener function
+//event listener function
+const clickLogo = (clickEvent) => {
+    if (clickEvent.target.id === "logo") {
+        setView(defaultView)
 
-    //listen for event
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
 
-
+        console.log(transientState)
+    }
+}
+//listen for event
+document.addEventListener("click", clickLogo)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +84,7 @@ export const NavBarHTML = async () => {
         }
     )
 
-    const navBar = `<img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
+    const navBar = `<img id="logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
         > <h1 class="main-header">GIFFYLUBE REBOOTED</h1
         > <button type="button" id="sendMessage">Send Message</button
         > <button type="button" id="inbox">${userMessages.length}</button
