@@ -18,7 +18,29 @@ to save messages sent through the form
 import { getChosenUser, setView, saveMessage } from "../data/TransientState.js"
 
 const chosenUsers = getChosenUser()
-const messages = saveMessage()
+const savedMessages = saveMessage()
 const preferredView = setView()
 
+export const MessageForm = async () => {
+    const users = await fetchUsers()
 
+    let html = `<h1>Create Your Message</h1> 
+   <section>
+   To:
+    <select id="messageRecipientDropdown"> 
+    <option value="0">List of Users`
+    for (const user of users) {
+      html +=  `<option value = "${user.id}">${user.name}</option>`
+    }
+
+return html += `</select></section>
+<section>
+<label for="username">Name:</label><br>
+<input type="text" id="name"><br>
+<label for="text">Subject:</label><br>
+<input type="text" id="subject"><br>
+<label for="message">Message:</label><br>
+<input type="text" id="message"><br>
+<button type="button">Send</button>
+</section>
+` }
