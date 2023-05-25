@@ -44,7 +44,7 @@ const renderApp = async () => {
       // UI = GiffyLube()
       console.log("User authenticated...")
       console.log(`You are logged in as ${verifiedUser.name}`)
-      UI = GiffyLube()
+      UI = await GiffyLube()
     } else {
       // UI = Login()
       console.log("User not authenticated")
