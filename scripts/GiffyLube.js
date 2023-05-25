@@ -3,7 +3,7 @@
 // import PostList from ./feed/PostList.js
 // import Footer from ./nav/Footer.js
 // import MessageForm from ./message/MessageForm.js
-// import PrivateMessages from ./message/PrivateMessages.js
+// import MessageList from ./message/PrivateMessages.js
 // import getView function from ./data/TransientState.js
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
