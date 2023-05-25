@@ -10,6 +10,7 @@ import { fetchMessages, getCurrentUser } from "../data/TransientState.js"
 //////////////////// event listeners /////////////////////////////////////////////////////////////
 // Notifications - set transient state view to viewMessages
     //event listener function
+    const 
 
     //listen for event
 
@@ -53,10 +54,10 @@ export const NavBarHTML = async () => {
 
     const navBar = `<img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
         > <h1 class="main-header">GIFFYLUBE REBOOTED</h1
-        > <button type="button">Send Message</button
-        > <button type="button">${userMessages.length}</button
+        > <button type="button" id="sendMessage">Send Message</button
+        > <button type="button" id="inbox">${userMessages.length}</button
         > <div>${currentUser.name}</div
-        > <button type="button">Logout</button>`
+        > <button type="button" id="logout">Logout</button>`
 
     return navBar
 }
