@@ -18,82 +18,74 @@ to save messages sent through the form
 
 
 
-import { getChosenUser, setMessage, setView, saveMessage , fetchUsers, saveLike, getCurrentUser} from "../data/TransientState.js"
+        import { getChosenUser, setMessage, setView, saveMessage , fetchUsers, saveLike, getCurrentUser} from "../data/TransientState.js"
 
 
 
-// const documentingSetMessage = (event) => {
-//     if(clickEvent.target.id === "send") {
-//     setMessage(parseInt(clickEvent.target.value))
-// }
-// }
-const sendMessageButtonLink = async (clickEvent) => {
-     if(clickEvent.target.id === "send") {
-        let message = document.getElementById("message").value
-        let currentUser = getCurrentUser()
-        let recipientId = document.getElementById("chooseRecipient").value
+        // const documentingSetMessage = (event) => {
+        //     if(clickEvent.target.id === "send") {
+        //     setMessage(parseInt(clickEvent.target.value))
+        // }
+        // }
+        const sendMessageButtonLink = async (clickEvent) => {
+             if(clickEvent.target.id === "sendMessageForm") {
+                let message = document.getElementById("messageForm").value
+                let currentUser = getCurrentUser()
+                let recipientId = document.getElementById("chooseRecipient").value
+        
+                let messageObject = {
+                "userId": currentUser.userId,
+                "recipientId": recipientId,
+                "read": false,
+                "text": message
+            }        
+                setMessage(messageObject)    
+                await saveMessage()
+                setView(defaultView)
+            }
 
-        let messageObject = {
-        "userId": currentUser.userId,
-        "recipientId": recipientId,
-        "read": false,
-        "text": message}
-            if(message.length > 0) {
-
-    setMessage(messageObject)    
-    await saveMessage()
-}
-        window.alert(`Your message has been sent`)
-        setView(defaultView)
-        const customEvent = new CustomEvent("stateChanged")
-        document.dispatchEvent(customEvent)
-    }
-    else if(clickEvent.target.id === "cancel") {
-        setView(defaultView)
-        const customEvent = new CustomEvent("stateChanged")
-        document.dispatchEvent(customEvent)
-    }
-
-}
-
-
-   
-
+            else if(clickEvent.target.id === "cancelMessageForm") {
+                setView(defaultView)
+                const customEvent = new CustomEvent("stateChanged")
+                document.dispatchEvent(customEvent)
+            }
+        
+        }
+        
+        
            
-
-
-
-
-export const MessageForm = async () => {
-    const users = await fetchUsers()
-
-    let html = `<h1>Create Your Message</h1> 
-   <section>
-   To:
-    <select id="messageRecipientDropdown"> 
-    <option value="0">List of Users`
-    for (const user of users) {
-      html +=  `<option value = "${user.id}" id = "chooseRecipient" >${user.name}</option>`
-    }
-
-    document.addEventListener("click", sendMessageButtonLink)
-
-
-html += `</select></section>
-<section>
-<label for="username">Name:</label><br>
-<input type="text" id="name"><br>
-<label for="text">Subject:</label><br>
-<input type="text" id="subject"><br>
-<label for="message">Message:</label><br>
-<input type="text" id="message"><br>
-<button id="send">Send</button>
-<button id="cancel">Cancel</button>
-</section>
-` 
-
-return html}
-
-
-
-
+        
+                   
+        
+        
+        
+        
+        export const MessageForm = async () => {
+            const users = await fetchUsers()
+        
+            let html = `<h1>Create Your Message</h1> 
+           <section>
+           To:
+            <select id="messageRecipientDropdown"> 
+            <option value="0">List of Users`
+            for (const user of users) {
+              html +=  `<option value = "${user.id}" id = "chooseRecipient" >${user.name}</option>`
+            }
+        
+            document.addEventListener("click", sendMessageButtonLink)
+        
+        
+        html += `</select></section>
+        <section>
+        <label for="username">Name:</label><br>
+        <input type="text" id="name"><br>
+        <label for="text">Subject:</label><br>
+        <input type="text" id="subject"><br>
+        <label for="messageForm">Message:</label><br>
+        <input type="text" id="message"><br>
+        <button id="sendMessageForm">Send</button>
+        <button id="cancelMessageForm">Cancel</button>
+        </section>
+        ` 
+        
+        return html}

@@ -145,6 +145,7 @@ export const saveMessage = async () => {
   }
   // Send the transient state to your API
   await fetch("http://localhost:8088/messages", postOptions)
+  window.alert(`Your message has been sent`)
 
   //dispatch custom event for state change
   const customEvent = new CustomEvent("stateChanged")
