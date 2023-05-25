@@ -1,0 +1,10 @@
+.main-header {
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+}
+
+.navbar {
+    display: flex;
+    max-width: 5%;
+    height: auto
+}

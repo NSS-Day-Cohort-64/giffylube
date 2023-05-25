@@ -90,12 +90,14 @@ export const NavBarHTML = async () => {
         }
     )
 
-    const navBar = `<img id="logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
+    const navBar = `<section class="navbar">
+        <img id="logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" 
         > <h1 class="main-header">GIFFYLUBE REBOOTED</h1
         > <button type="button" id="sendMessage">Send Message</button
         > <button type="button" id="inbox">${userMessages.length}</button
         > <div>${currentUser.name}</div
-        > <button type="button" id="logout">Logout</button>`
+        > <button type="button" id="logout">Logout</button>
+        </section>`
 
     return navBar
 }
