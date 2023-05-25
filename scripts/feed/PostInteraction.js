@@ -8,27 +8,30 @@ import { deletePost, favoritePost } from '../data/TransientState.js';
 // attach 2 click event listeners -- both outside any function:
     // Delete button
     // Favorite button
-document.addEventListener('click', handleDeleteButtonClick);
-document.addEventListener('click', handleFavoriteButtonClick);
+    const handleDeleteButtonClick = (postId) => {
+        deletePost(postId);
+      };
+      
+      const handleFavoriteButtonClick = (postId) => {
+        favoritePost(postId);
+      };
+      
+      document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('delete-button')) {
+          handleDeleteButtonClick(event.target.dataset.postId);
+        }
+      
+        if (event.target.classList.contains('favorite-button')) {
+          handleFavoriteButtonClick(event.target.dataset.postId);
+        }
+      });
 
 // declare and export PostInteraction function
 export const PostInteraction = (postId) => {
-  const handleDeleteButtonClick = (event) => {
-    if (event.target.classList.contains('delete-button')) {
-      deletePost(postId);
-    }
+    return `
+      <div class="post-interaction">
+        <button class="delete-button" data-post-id="${postId}">DELETE</button>
+        <button class="favorite-button" data-post-id="${postId}">FAVORITE</button>
+      </div>
+    `;
   };
-
-  const handleFavoriteButtonClick = (event) => {
-    if (event.target.classList.contains('favorite-button')) {
-      favoritePost(postId);
-    }
-  };
-
-  return `
-    <div class="post-interaction">
-      <button class="delete-button">DELETE</button>
-      <button class="favorite-button">FAVORITE</button>
-    </div>
-  `;
-};
