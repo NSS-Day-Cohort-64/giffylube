@@ -6,7 +6,7 @@ and handling reply button
 // import MessageList from ./feed/MessageList.js
 
     // imports getMessages and getUsers functions from ./data/TransientState.js
-import { fetchMessages, fetchUsers, getCurrentUser } from './data/TransientState.js';
+import { fetchMessages, fetchUsers, getCurrentUser } from '../data/TransientState.js';
 
 // declare and export MessageList function that generates an HTML string representing a list of messages
 // make sure you are checking that the message.recipientId===currentUser.userId
