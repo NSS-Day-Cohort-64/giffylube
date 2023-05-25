@@ -21,6 +21,7 @@ to save messages sent through the form
 import { getChosenUser, setView, saveMessage , fetchUsers, saveLike} from "../data/TransientState.js"
 
 const chosenUsers = getChosenUser()
+const savedMessages = saveMessage()
 const preferredView = setView()
 
 const sendMessageButtonLink = (clickEvent) => {
