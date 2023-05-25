@@ -13,13 +13,32 @@ to save messages sent through the form
         // will trigger the saveMessage function, which will retrieve the values from user inputs and post them to the API
         // return an alert: your message has been sent!
         // once the alert is X'd out, setView function triggers, which will change the "view" property to default view / main page
-// declare and export MessageForm function to build HTML for message form
 
-import { getChosenUser, setView, saveMessage , fetchUsers} from "../data/TransientState.js"
+        
+
+
+
+import { getChosenUser, setView, saveMessage , fetchUsers, saveLike} from "../data/TransientState.js"
 
 const chosenUsers = getChosenUser()
-const savedMessages = saveMessage()
 const preferredView = setView()
+
+const sendMessageButtonLink = (clickEvent) => {
+    if(clickEvent.target.id === "send") {
+       getChosenUser()
+        saveMessage()
+        window.alert(`Your message has been sent`)
+        setView(defaultView)
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
+    }
+    else if(clickEvent.target.id === "cancel") {
+        setView(defaultView)
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
+    }
+
+}
 
 export const MessageForm = async () => {
     const users = await fetchUsers()
@@ -33,6 +52,9 @@ export const MessageForm = async () => {
       html +=  `<option value = "${user.id}">${user.name}</option>`
     }
 
+    document.addEventListener("click", sendMessageButtonLink)
+
+
 return html += `</select></section>
 <section>
 <label for="username">Name:</label><br>
@@ -41,6 +63,8 @@ return html += `</select></section>
 <input type="text" id="subject"><br>
 <label for="message">Message:</label><br>
 <input type="text" id="message"><br>
-<button type="button">Send</button>
+<button id="send">Send</button>
+<button id="cancel">Cancel</button>
+
 </section>
 ` }
