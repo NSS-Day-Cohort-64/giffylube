@@ -1,5 +1,6 @@
 // import NavBar from ./nav/NavBar.js
 import { getView } from "./data/TransientState.js"
+import { PostEntry } from "./feed/PostEntry.js"
 import { PostList } from "./feed/PostList.js"
 import { MessageForm } from "./message/MessageForm.js"
 import { MessageList } from "./message/PrivateMessages.js"
@@ -20,6 +21,7 @@ export const GiffyLube = async () => {
     const messages = await MessageList()
     const messageForm = await MessageForm()
     const posts = await PostList()
+    const postGif = PostEntry()
 
     const view = getView()
     
@@ -40,9 +42,12 @@ export const GiffyLube = async () => {
         }
 
         //3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
-       /* if(view === "postGif") {
-            htmlList += `${}`
-        } */
+        if (view === "postGif") {
+            htmlList += `${postGif}`
+            htmlList += `<section class="posts">
+                            ${posts}
+                         </section>`
+        } 
         
         //4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
         if (view === "defaultView") {
