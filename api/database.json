@@ -60,6 +60,34 @@
       "read": false,
       "text": "cool cool cool",
       "id": 5
+    },
+    {
+      "userId": 3,
+      "recipientId": 3,
+      "read": false,
+      "text": "yoyo",
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "recipientId": 4,
+      "read": false,
+      "text": "what's your favorite color?",
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "recipientId": 2,
+      "read": false,
+      "text": "whatcha doin this weekend?",
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "recipientId": 1,
+      "read": false,
+      "text": "hey daddy-o!",
+      "id": 9
     }
   ],
   "likes": [
