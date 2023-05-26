@@ -5,6 +5,57 @@
 
 .navbar {
     display: flex;
-    max-width: 5%;
-    height: auto
+    justify-content: space-evenly;
+    background: rgb(171,221,255);
+    background: linear-gradient(90deg, rgba(171,221,255,1) 14%, rgba(115,239,250,1) 46%, rgba(0,212,255,1) 88%);
+    margin: -10px;
+    padding: 15px;
+}
+
+.navButtons {
+    display: flex;
+}
+
+.logout-username {
+    display: flex;
+    flex-direction: column;
+}
+
+#logout, #usernameDisplay {
+    margin: 10px;
+    border-radius: 10%;
+    border: 3px solid lightblue; 
+
+    padding: 10px;
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    background-color: lightcyan;
+}
+
+#inbox {
+    margin: 10px;
+    border-radius: 10%;
+    border: 3px solid lightblue; 
+    height: 90px;
+    padding: 10px;
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    background-color: lightcyan;
+}
+
+#logo {
+    max-width: 10%;
+    height: auto;
+    margin-left: 10px;
+    border-radius: 40%;
+    border: 2px solid lightblue; 
+    padding-top: -5px;
+}
+
+#sendMessagePen {
+    max-width: 15%;
+    height: auto;
+    border-radius: 40%;
+    border: 3px solid lightblue;
+    padding: 8px; 
 }
