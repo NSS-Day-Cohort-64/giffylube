@@ -48,102 +48,52 @@
       "text": "how you doin'?"
     },
     {
-      "userId": 4,
-      "recipientId": null,
-      "read": false,
-      "text": "adfsaf",
-      "id": 4
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "asdf",
-      "id": 5
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "asdf",
-      "id": 6
-    },
-    {
-      "userId": 4,
-      "recipientId": 0,
-      "read": false,
-      "text": "DSadsDSdsa",
-      "id": 7
-    },
-    {
-      "userId": 4,
-      "recipientId": 3,
-      "read": false,
-      "text": "alsfjas",
-      "id": 8
-    },
-    {
-      "userId": 4,
-      "recipientId": 3,
-      "read": false,
-      "text": "adsfaf",
-      "id": 9
-    },
-    {
-      "userId": 4,
-      "recipientId": 3,
-      "read": false,
-      "text": "adsfaf",
-      "id": 10
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "adfs",
-      "id": 11
-    },
-    {
-      "userId": 4,
-      "recipientId": 3,
-      "read": false,
-      "text": "Did it work?",
-      "id": 12
-    },
-    {
-      "userId": 4,
+      "id": 4,
+      "userId": 1,
       "recipientId": 2,
       "read": false,
-      "text": "adfasf",
-      "id": 13
+      "text": "cool cool cool"
     },
     {
-      "userId": 4,
+      "userId": 2,
       "recipientId": 1,
       "read": false,
-      "text": "kajsdjkalskfjdfk",
-      "id": 14
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "gfgh",
-      "id": 15
+      "text": "cool cool cool",
+      "id": 5
     }
   ],
   "likes": [
     {
-      "userId": 2,
-      "postId": 1
+      "userId": {
+        "userId": 2,
+        "name": "Sarah",
+        "email": "Sarah@giffylube.com"
+      },
+      "id": 1
     },
     {
-      "userId": 4,
-      "postId": 3
+      "userId": {
+        "userId": 2,
+        "name": "Sarah",
+        "email": "Sarah@giffylube.com"
+      },
+      "id": 2
     },
     {
-      "userId": 1,
-      "postId": 2
+      "userId": {
+        "userId": 2,
+        "name": "Sarah",
+        "email": "Sarah@giffylube.com"
+      },
+      "id": 3
+    },
+    {
+      "userId": {
+        "userId": 2,
+        "name": "Sarah",
+        "email": "Sarah@giffylube.com"
+      },
+      "id": 4
     }
   ],
   "posts": [
@@ -152,7 +102,7 @@
       "userId": 2,
       "title": "blah blah",
       "description": "description here",
-      "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjM0ZTA4YTNjOWZiNzRkZTRjZDRlZDgzNzJjNDYyNGUzY2JmMjIxNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Z9WQLSrsQKH3uBbiXq/giphy.gif",
+      "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RlYzRlMmQ5N2FmZGQwMmU4MzQxYzhkZjI1MDZkZGRjM2VmOWY4MCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Z9WQLSrsQKH3uBbiXq/giphy.gif",
       "year": 2022
     },
     {
@@ -160,7 +110,7 @@
       "userId": 1,
       "title": "woot woot",
       "description": "description here",
-      "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDNhZGQ0N2FjY2M0NDI3ODE3NWM1MjU5ZjY1YTc3MTVlZjljYmZjZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/2A75RyXVzzSI2bx4Gj/giphy.gif",
+      "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3YjAxMmE5YmQzZWJlZDVhODZiMDQwYjJhNTMyNGZlZWQyYTBjMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/2A75RyXVzzSI2bx4Gj/giphy.gif",
       "year": 1999
     },
     {
@@ -168,7 +118,7 @@
       "userId": 4,
       "title": "bing bong",
       "description": "description here",
-      "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTUxNjczMDJiZTEwNDAwZjczMmY4ZGMxODRkNzQ2MDIwM2VhMmJjNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1d7F9xyq6j7C1ojbC5/giphy.gif",
+      "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVjMzNiMGMyYjdkMjNhYjVlM2UxOTkxNTJjNmQzZWYyMDFiOWE1MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1d7F9xyq6j7C1ojbC5/giphy.gif",
       "year": 2023
     },
     {

@@ -27,7 +27,7 @@ document.addEventListener("click", clickNotifications)
 // Send Message - change view to createMessage
 //event listener function
 const clickSendMessage = (clickEvent) => {
-    if (clickEvent.target.id === "sendMessage") {
+    if (clickEvent.target.id === "sendMessagePen") {
         setView("createMessage")
 
         const customEvent = new CustomEvent("stateChanged")
