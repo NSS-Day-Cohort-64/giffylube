@@ -122,8 +122,8 @@ export const fetchMessages = async () => {
 }
 
 
-// exports a bunch of functions:
-// favoritePost
+// deletePost ??
+
 // clearFilters
 // markAllMessagesRead???
 // toggleFavoritesOnly
