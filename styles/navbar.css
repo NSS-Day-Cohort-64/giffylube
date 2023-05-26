@@ -1,0 +1,95 @@
+.main-header {
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    text-shadow: 3px 3px 3px whitesmoke;
+    flex: 2;
+    text-align: center;
+    font-size: 60px;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(171,221,255);
+    background: linear-gradient(90deg, rgba(171,221,255,1) 14%, rgba(115,239,250,1) 46%, rgba(0,212,255,1) 88%);
+    margin: -10px;
+    padding: 15px;
+}
+
+.navButtons {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.logout-username {
+    display: flex;
+    flex-direction: column;
+}
+#usernameDisplay {
+    margin: 5px 5px 0px 5px;
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    font-size: 20px;
+    text-shadow: 3px 3px 3px whitesmoke;
+}
+
+#logout {
+    margin: 0px 5px 5px 5px;
+    border-radius: 5%;
+    border: 2px solid rgb(255, 0, 0); 
+    padding: 0px 10px 0px 10px;
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    background-color: lightcyan;
+    font-size: 20px;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+}
+#logout:hover {   
+    opacity: 0.7;   
+}  
+
+#inbox {
+    margin: 10px;
+    border-radius: 10%;
+    border: 2px solid rgb(255, 0, 0);  
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    background-color: lightcyan;
+    font-size: 20px;
+    padding: 10px 5px 10px 5px;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+}
+#inbox:hover {   
+    opacity: 0.7;   
+}  
+
+#logo {
+    flex: 1;
+    max-width: 10%;
+    height: auto;
+    margin-left: 10px;
+    border-radius: 40%;
+    border: 2px solid rgb(255, 0, 0); 
+    justify-content: flex-start;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+}
+#logo:hover {   
+    opacity: 0.7;   
+}  
+
+#sendMessagePen {
+    max-width: 25%;
+    height: auto;
+    border-radius: 20%;
+    border: 2px solid rgb(255, 0, 0); 
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+
+}
+#sendMessagePen:hover {   
+    opacity: 0.7;   
+}  
