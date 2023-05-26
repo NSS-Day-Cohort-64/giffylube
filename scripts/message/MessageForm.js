@@ -78,8 +78,6 @@ to save messages sent through the form
         
         html += `</select></section>
         <section>
-        <label for="text">Subject:</label><br>
-        <input type="text" id="subject"><br>
         <label for="messageForm">Message:</label><br>
         <input type="text" id="messageForm"><br>
         <button id="sendMessageForm">Send</button>
