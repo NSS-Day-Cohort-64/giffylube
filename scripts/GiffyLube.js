@@ -46,7 +46,7 @@ export const GiffyLube = async () => {
         //4. If transientState.view===defaultView, generate the HTML for the main feed page and add it to the htmlString
         if (view === "defaultView") {
             htmlList += `
-            <h2 class="postGif">Have a gif to post?</h2>
+            <h2 id="postGif">Have a gif to post?</h2>
             <section class="posts"
             >${posts}</section>`
         }
