@@ -30,13 +30,7 @@ const renderApp = async () => {
   const container = document.querySelector("#container")
   // // Assign an empty html string to a variable called 'UI'
   
-  // //Daniel here, experimenting with my function.
-
-  // const MessageFormHTML = await MessageForm()
-  // const composedHTML = `<h1>Daniel Experiment</h1>
-  // <section>${MessageFormHTML}</section>`
-  
-  // //End of my experimentation
+ 
   let UI = ""
   // Get the current user(or check if there is one)
   const thisUser = getCurrentUser()
@@ -66,8 +60,7 @@ const renderApp = async () => {
   // container.innerHTML = UI
   container.innerHTML = UI
 
-  // // //Daniel Experiment
-  // container.innerHTML = composedHTML
+
 }
 
 // Invoke renderApp()

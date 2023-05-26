@@ -4,6 +4,8 @@ import { PostList } from "./feed/PostList.js"
 import { MessageForm } from "./message/MessageForm.js"
 import { MessageList } from "./message/PrivateMessages.js"
 import { NavBarHTML } from "./nav/NavBar.js"
+
+
 // import PostEntry from ./feed/PostEntry.js
 // import PostList from ./feed/PostList.js
 // import Footer from ./nav/Footer.js
@@ -34,8 +36,7 @@ export const GiffyLube = async () => {
         //2. If transientState.view===createMessage, then invoke function that generates all the HTML for the create message page and add it to the htmlString
         if (view === "createMessage") {
             htmlList += `<section class="messageForm"
-                >${messageForm}<
-                /section>`
+                >${messageForm}</section>`
         }
 
         //3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString
