@@ -18,7 +18,7 @@ to save messages sent through the form
 
 
 
-        import { getChosenUser, setMessage, setView, saveMessage , fetchUsers, saveLike, getCurrentUser} from "../data/TransientState.js"
+        import { setMessage, setView, saveMessage , fetchUsers, getCurrentUser} from "../data/TransientState.js"
 
 
 
@@ -50,18 +50,23 @@ to save messages sent through the form
                 setMessage(messageObject)    
                 await saveMessage()
                 setView("defaultView")
+                const customEvent = new CustomEvent("stateChanged")
+                document.dispatchEvent(customEvent)
             }
             /* 
             Once we created the messageObject to manipulate the transient state which 
             is to be sent to the API database, we must invoke the setMessage with a property
-            of messageObject to alter the transient state. 
+            of messageObject to alter the transient state. The recipientId corresponds with line 41
+            and line 
             */
 
             else if(clickEvent.target.id === "cancelMessageForm") {
                 setView("defaultView")
                 const customEvent = new CustomEvent("stateChanged")
                 document.dispatchEvent(customEvent)
+               
             }
+           
         
         }
         
