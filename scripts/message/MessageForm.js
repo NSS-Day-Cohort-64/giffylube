@@ -13,34 +13,92 @@ to save messages sent through the form
         // will trigger the saveMessage function, which will retrieve the values from user inputs and post them to the API
         // return an alert: your message has been sent!
         // once the alert is X'd out, setView function triggers, which will change the "view" property to default view / main page
-// declare and export MessageForm function to build HTML for message form
 
-import { getChosenUser, setView, saveMessage , fetchUsers} from "../data/TransientState.js"
+        
 
-const chosenUsers = getChosenUser()
-// const savedMessages = saveMessage() This function should only be called in the event listener -Ryan
-// const preferredView = setView() This function should only be called in the event listener -Ryan
 
-export const MessageForm = async () => {
-    const users = await fetchUsers()
 
-    let html = `<h1>Create Your Message</h1> 
-   <section>
-   To:
-    <select id="messageRecipientDropdown"> 
-    <option value="0">List of Users`
-    for (const user of users) {
-      html +=  `<option value = "${user.id}">${user.name}</option>`
-    }
+        import { setMessage, setView, saveMessage , fetchUsers, getCurrentUser} from "../data/TransientState.js"
 
-return html += `</select></section>
-<section>
-<label for="username">Name:</label><br>
-<input type="text" id="name"><br>
-<label for="text">Subject:</label><br>
-<input type="text" id="subject"><br>
-<label for="message">Message:</label><br>
-<input type="text" id="message"><br>
-<button type="button">Send</button>
-</section>
-` }
+
+
+        // const documentingSetMessage = (event) => {
+        //     if(clickEvent.target.id === "send") {
+        //     setMessage(parseInt(clickEvent.target.value))
+        // }
+        // }
+        const sendMessageButtonLink = async (clickEvent) => {
+             if(clickEvent.target.id === "sendMessageForm") {
+                let message = document.getElementById("messageForm").value
+                /* the document.getElementById function is explaining the specific
+                spot we want to target in the document. We are targetting message form,
+                but we must include the .value property to say that we want to target
+                the contents of said property. For example, the "messageForm.value" will 
+                be the message itself since line 88 highlights the message. Now the variable message
+                will be the message that is sent. On line 48, we are sending the message to the database.
+                */
+                let currentUser = getCurrentUser()
+                let recipientId = document.getElementById("messageRecipientDropdown").value
+                //We want to target the value whole select element, and then get the 'values' will come from each option
+        
+                let messageObject = {
+                "userId": currentUser.userId,
+                "recipientId": parseInt(recipientId),
+                "read": false,
+                "text": message
+            }        
+                setMessage(messageObject)    
+                await saveMessage()
+                setView("defaultView")
+                
+            }
+            /* 
+            Once we created the messageObject to manipulate the transient state which 
+            is to be sent to the API database, we must invoke the setMessage with a property
+            of messageObject to alter the transient state. The recipientId corresponds with line 41
+            and line 
+            */
+
+            else if(clickEvent.target.id === "cancelMessageForm") {
+                setView("defaultView")
+                const customEvent = new CustomEvent("stateChanged")
+                document.dispatchEvent(customEvent)
+               
+            }
+           
+        
+        }
+        
+        
+           
+        
+                   
+        
+        
+        
+        
+        export const MessageForm = async () => {
+            const users = await fetchUsers()
+        
+            let html = `<h1>Create Your Message</h1> 
+           <section>
+           To:
+            <select id="messageRecipientDropdown"> 
+            <option value="0">List of Users`
+            for (const user of users) {
+              html +=  `<option value ="${user.id}">${user.name}</option>`
+            }
+        
+            document.addEventListener("click", sendMessageButtonLink)
+        
+        
+        html += `</select></section>
+        <section>
+        <label for="messageForm">Message:</label><br>
+        <input type="text" id="messageForm"><br>
+        <button id="sendMessageForm">Send</button>
+        <button id="cancelMessageForm">Cancel</button>
+        </section>
+        ` 
+        
+        return html}

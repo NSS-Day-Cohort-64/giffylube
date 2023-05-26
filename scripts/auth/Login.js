@@ -52,11 +52,11 @@ export const Login = () => {
         <form id="loginForm">  
             <div class="Login">   
                 <div class="Login__row Login__username">
-                    <label class="Login--label">Username : </label>   
+                    <label class="Login--label" for="username">Username : </label>   
                     <input id="username" class="Login--input" type="text" placeholder="Enter Username" name="username" required>
                 </div>  
                 <div class="Login__row Login__password">
-                    <label class="Login--label">Password : </label>
+                    <label class="Login--label" for="password">Password : </label>
                     <input id="password" class="Login--input" type="password" placeholder="Enter Password" name="password" required>
                 </div>   
                   
