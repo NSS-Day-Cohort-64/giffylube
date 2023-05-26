@@ -22,8 +22,14 @@
 .post {
     flex: 1;
     width: 500px;
+    border-bottom: 3px dotted rgb(255, 0, 0);
+    padding-bottom: 20px;
 }
 
 body {
     background-color: lightcyan;
+}
+
+.user, .likes {
+    margin-bottom: 8px;
 }

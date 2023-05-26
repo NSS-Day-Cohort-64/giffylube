@@ -1,5 +1,6 @@
 @import 'login.css';
 @import 'navbar.css';
+@import 'defaultview.css';
 
 * {
     box-sizing: border-box;
