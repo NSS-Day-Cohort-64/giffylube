@@ -1,0 +1,32 @@
+.message {
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+    border: 2px dotted rgb(255, 0, 0);
+    padding: 20px;
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+    margin-bottom: 20px;
+
+}
+
+.message-text {
+    border: 2px solid lightblue;
+    padding: 10px;
+}
+
+.messages {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#reply {
+    background-color: rgb(0, 33, 104);
+    color: lightcyan;
+    font-family: 'Figtree', sans-serif;
+    border-radius: 10%;
+    padding: 2px 8px 2px 8px;
+}
+#reply:hover {   
+    opacity: 0.7;   
+    cursor: pointer;
+}  

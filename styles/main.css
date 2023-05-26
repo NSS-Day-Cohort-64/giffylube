@@ -1,6 +1,7 @@
 @import 'login.css';
 @import 'navbar.css';
 @import 'defaultview.css';
+@import 'privatemessages.css';
 
 * {
     box-sizing: border-box;

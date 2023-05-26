@@ -60,6 +60,13 @@
       "read": false,
       "text": "cool cool cool",
       "id": 5
+    },
+    {
+      "userId": 3,
+      "recipientId": 3,
+      "read": false,
+      "text": "yoyo",
+      "id": 6
     }
   ],
   "likes": [
