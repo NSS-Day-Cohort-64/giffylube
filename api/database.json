@@ -64,21 +64,21 @@
             "userId": 2,
             "title": "blah blah",
             "description": "description here",
-            "imageUrl": "https://giphy.com/gifs/dance-alien-ufo-Z9WQLSrsQKH3uBbiXq",
+            "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RlYzRlMmQ5N2FmZGQwMmU4MzQxYzhkZjI1MDZkZGRjM2VmOWY4MCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Z9WQLSrsQKH3uBbiXq/giphy.gif",
             "year": 2022
         },
         {
             "userId": 1,
             "title": "woot woot",
             "description": "description here",
-            "imageUrl": "https://giphy.com/gifs/hallmarkecards-cute-hallmark-shoebox-2A75RyXVzzSI2bx4Gj",
+            "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3YjAxMmE5YmQzZWJlZDVhODZiMDQwYjJhNTMyNGZlZWQyYTBjMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/2A75RyXVzzSI2bx4Gj/giphy.gif",
             "year": 1999
         },
         {
             "userId": 4,
             "title": "bing bong",
             "description": "description here",
-            "imageUrl": "https://giphy.com/gifs/1d7F9xyq6j7C1ojbC5",
+            "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVjMzNiMGMyYjdkMjNhYjVlM2UxOTkxNTJjNmQzZWYyMDFiOWE1MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1d7F9xyq6j7C1ojbC5/giphy.gif",
             "year": 2023
         }
     ]
