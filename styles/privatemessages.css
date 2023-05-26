@@ -11,6 +11,7 @@
 .message-text {
     border: 2px solid lightblue;
     padding: 10px;
+    background-color: rgb(239, 243, 243);
 }
 
 .messages {

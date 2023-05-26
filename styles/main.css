@@ -3,6 +3,7 @@
 @import 'defaultview.css';
 @import 'privatemessages.css';
 @import 'favoritebutton.css';
+@import 'messageForm.css';
 
 * {
     box-sizing: border-box;
