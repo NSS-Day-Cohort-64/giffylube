@@ -220,6 +220,22 @@
       "description": "description here",
       "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVjMzNiMGMyYjdkMjNhYjVlM2UxOTkxNTJjNmQzZWYyMDFiOWE1MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1d7F9xyq6j7C1ojbC5/giphy.gif",
       "year": 2023
+    },
+    {
+      "userId": 1,
+      "title": "Happy Friday",
+      "description": "Happy Friday, gang!",
+      "imageUrl": "https://media4.giphy.com/media/nabcohtGz4ypIRnyCF/giphy.gif?cid=ecf05e477a9e8677c7c32faff8fc8807b04da6182b639bd0&ep=v1_gifs_gifId&rid=giphy.gif&ct=g",
+      "year": "14:11 on 5/26/2023",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Hmm, lets see if this works...",
+      "description": "Shippingshipsshiipshsihshs",
+      "imageUrl": "https://media2.giphy.com/media/l1J9vZywkOtCylPOw/giphy.gif?cid=ecf05e47faf6c9c3b0fbedc3b65422e295c659121d5fe513&ep=v1_gifs_gifId&rid=giphy.gif&ct=g",
+      "year": "15:41 on 5/26/2023",
+      "id": 5
     }
   ]
 }
