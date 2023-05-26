@@ -148,6 +148,7 @@
   ],
   "posts": [
     {
+      "id": 1,
       "userId": 2,
       "title": "blah blah",
       "description": "description here",
@@ -155,6 +156,7 @@
       "year": 2022
     },
     {
+      "id": 2,
       "userId": 1,
       "title": "woot woot",
       "description": "description here",
@@ -162,6 +164,7 @@
       "year": 1999
     },
     {
+      "id": 3,
       "userId": 4,
       "title": "bing bong",
       "description": "description here",
