@@ -90,22 +90,23 @@ document.addEventListener(
 // export PostEntry function to main.js
 export const PostEntry = () => {
     let postHTMLform = `
-    <div class="postHeader"><h2>Post a gif to GiffyLube</h2></div>  
-        <section id="postEntryForm">  
+      
+        <section id="postEntryForm">
+            <div class="postHeader"><h2>Post a gif to GiffyLube</h2></div>  
             <div class="postEntry">   
                 <div class="postEntry__row postEntry__title">
-                    <label class="postEntry--label" for="postEntryTitle">Title of Post: </label>   
-                    <input id="postEntryTitle" class="postEntry--input" type="text" placeholder="Enter Title for Gif" name="Title">
+                    <div><label class="postEntry--label" for="postEntryTitle">Title of Post: </label></div>   
+                    <div><input id="postEntryTitle" class="postEntry--input" type="text" placeholder="Enter Title for Gif" name="Title"></div>
                 </div>
                 
                 <div class="postEntry__row postEntry__url">
-                    <label class="postEntry--label" for="gifUrl">Gif url : </label>
-                    <input id="gifUrl" class="postEntry--input" type="text" placeholder="Paste the Gif url here" name="Url">
+                    <div><label class="postEntry--label" for="gifUrl">Gif url : </label></div>
+                    <div><input id="gifUrl" class="postEntry--input" type="text" placeholder="Paste the Gif url here" name="Url"></div>
                 </div>
 
                 <div class="postEntry__row postEntry__description">
-                    <label class="postEntry--label" for="postEntryDescription">Description : </label>
-                    <input id="postEntryDescription" class="postEntry--input" type="text" placeholder="Enter a description for the post here" name="Description">
+                    <div><label class="postEntry--label" for="postEntryDescription">Description : </label></div>
+                    <div><input id="postEntryDescription" class="postEntry--input" type="text" placeholder="Enter a description for the post here" name="Description"></div>
                 </div> 
                   
                 <div class="postEntry__row postEntry__buttonRow">

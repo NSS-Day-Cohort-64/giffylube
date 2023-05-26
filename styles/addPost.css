@@ -1,0 +1,73 @@
+.postEntry--input, .postEntryButton, .postCancelButton, .postEntry--label {
+    font-family: 'Figtree', sans-serif;
+    color: rgba(54, 54, 53, 0.90);
+}
+
+#postEntryForm {
+    padding: 0.5rem 0.25rem;   
+    background-color: rgba(224, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 75%;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.3);
+    border: 2px dashed rgba(135, 206, 250, 0.5);
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.postHeader {
+    padding: 0.25rem 0 0.5rem 0;
+}
+
+
+.postHeader h2 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.postEntry__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postEntry--input {   
+    width: 90%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    border: 2px solid lightblue; 
+    border-radius: 5px;     
+}  
+
+.postEntry__buttonRow {
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+#postEntryButton {
+     background-color: lightblue;   
+     width: 10%;  
+     color: rgb(54, 54, 53);   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     cursor: pointer;  
+     border-radius: 5px; 
+}
+
+#postCancelButton {
+    background-color: lightgray;   
+    width: 10%;  
+    color: rgb(54, 54, 53);   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;  
+    border-radius: 5px; 
+}
+
+.postEntry--btn:hover {
+    opacity: 0.7;
+    cursor: pointer;   
+}
+
