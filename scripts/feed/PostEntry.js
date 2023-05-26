@@ -2,14 +2,10 @@
 handles user interactions and state changes related to posting entries
 */
 
+import { getCurrentUser, savePost, setPost } from "../data/TransientState.js"
 import { setView } from "../data/TransientState.js"
 
-// import savePost from ./data/TransientState.js
-// declare PostEntry function
-//  create title, url, description, year as object to send to API
-// attach 2 click event listeners:
-    // Cancel button
-    // Save button
+
 
 // Add event listener to change view when the 'Have a post to submit?' is clicked
 document.addEventListener(
@@ -38,6 +34,58 @@ document.addEventListener(
         }
     }
 )
+// Add a function to generate the timestamp and convert it to year
+const setTime = () => {
+    const currentDate = new Date()
+    const timeStamp = currentDate.getTime()
+    return timeStamp
+}
+
+// Add function to convert timestamp
+const convertDate = (timestamp) => {
+    let date = new Date(timestamp)
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // Months are zero-based, so we add 1
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    const formattedTime = `${hours}:${minutes} on ${month}/${day}/${year}`
+    return formattedTime
+}
+
+// Add a click event listener to handle posting a gif
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        if (clickEvent.target.id === "postEntryButton") {
+            const currentUserId = getCurrentUser().userId
+            const postTitle = document.getElementById("postEntryTitle").value
+            const postDesc = document.getElementById("postEntryDescription").value
+            const postUrl = document.getElementById("gifUrl").value
+            const timestamp = setTime()
+            const postTime = convertDate(timestamp)
+
+            const currentPostObject = {
+                "userId": currentUserId,
+                "title": postTitle,
+                "description": postDesc,
+                "imageUrl": postUrl,
+                "year": postTime
+            }
+            
+            // Send the post to transientState
+            setPost(currentPostObject)
+            
+            console.log("this will be posted: ")
+            console.log(currentPostObject)
+
+            // POST to API
+            savePost()
+        }
+    }
+)
 
 // export PostEntry function to main.js
 export const PostEntry = () => {
@@ -49,19 +97,12 @@ export const PostEntry = () => {
                     <label class="postEntry--label" for="postEntryTitle">Title of Post: </label>   
                     <input id="postEntryTitle" class="postEntry--input" type="text" placeholder="Enter Title for Gif" name="Title">
                 </div>
-                <div class="postEntry__addGif">
-                    <h4>Paste a gif url --OR-- upload a .gif file here<h4>  
-                    <div class="postEntry__row postEntry__url">
-                        <label class="postEntry--label" for="gifUrl">Gif url : </label>
-                        <input id="gifUrl" class="postEntry--input" type="text" placeholder="Paste the Gif url here" name="Url">
-                    </div>
-
-                    <div>
-                        <label for="gif-upload">Upload Gif:</label>
-                        <input type="file" id="gif-upload" name="gif-upload">
-                    </div>
-                </div>
                 
+                <div class="postEntry__row postEntry__url">
+                    <label class="postEntry--label" for="gifUrl">Gif url : </label>
+                    <input id="gifUrl" class="postEntry--input" type="text" placeholder="Paste the Gif url here" name="Url">
+                </div>
+
                 <div class="postEntry__row postEntry__description">
                     <label class="postEntry--label" for="postEntryDescription">Description : </label>
                     <input id="postEntryDescription" class="postEntry--input" type="text" placeholder="Enter a description for the post here" name="Description">

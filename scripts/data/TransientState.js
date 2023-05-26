@@ -168,18 +168,36 @@ export const saveMessage = async () => {
 
 //savePost
 export const savePost = async () => {
-  // Define a postOptions object to specify a POST to the database
-  const postOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(transientState.post) // Turn the data into a string
+  // Check to make sure all information is entered
+  if (transientState.post.imageUrl.length > 0 && transientState.post.title.length > 0 && transientState.post.description.length > 0) {
+    // Define a postOptions object to specify a POST to the database
+    const postOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(transientState.post) // Turn the data into a string
+    }
+    // Send the transient state to your API
+    await fetch("http://localhost:8088/posts", postOptions).then(response => {
+      if (response.ok) {
+        console.log("Gif Post successful!")
+        window.alert("Your gif has been posted!")
+
+        //Set view to default
+        setView("defaultView")
+        //Dispatch custom event to re render HTML
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
+      }
+      else {
+        console.log("Gif post failed!")
+        window.alert("Something went wrong")
+      }
+    }).catch(error => { console.error("An error occurred:", error); })
+  } else {
+    window.alert("Please enter a title, gif url, and description")
   }
-  // Send the transient state to your API
-  await fetch("http://localhost:8088/posts", postOptions)
-  const customEvent = new CustomEvent("stateChanged")
-  document.dispatchEvent(customEvent)
 }
 
 
