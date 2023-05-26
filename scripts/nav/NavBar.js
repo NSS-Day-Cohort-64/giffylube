@@ -90,12 +90,18 @@ export const NavBarHTML = async () => {
         }
     )
 
-    const navBar = `<img id="logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" width="30" height="40"
-        > <h1 class="main-header">GIFFYLUBE REBOOTED</h1
-        > <button type="button" id="sendMessage">Send Message</button
-        > <button type="button" id="inbox">${userMessages.length}</button
-        > <div>${currentUser.name}</div
-        > <button type="button" id="logout">Logout</button>`
+    const navBar = `<section class="navbar">
+                <img id="logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4NsdHaUJCxhgA%2Fgiphy.gif" alt="giffylube logo" 
+                > <h1 class="main-header">GIFFYLUBE REBOOTED</h1> 
+                <section class="navButtons">
+                    <img id="sendMessagePen" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngitem.com%2Fpimgs%2Fm%2F31-318803_pen-and-paper-clipart-picture-clipartmonk-free-clip.png&f=1&nofb=1&ipt=24d6928cbf08f923129c5103ff3450d6e9cdb89c4809939336a90170051be746&ipo=images"> 
+                    <button type="button" id="inbox">${userMessages.length}</button> 
+                    <section class ="logout-username">
+                        <div id="usernameDisplay">${currentUser.name}</div> 
+                        <button type="button" id="logout">Logout</button>
+                    </section>
+                </section>
+        </section>`
 
     return navBar
 }
