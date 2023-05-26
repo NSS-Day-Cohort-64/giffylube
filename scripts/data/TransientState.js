@@ -148,6 +148,8 @@ export const saveMessage = async () => {
       if (response.ok) {
         console.log("Post request successful!")
         window.alert("Your message has been sent")
+        const customEvent = new CustomEvent("stateChanged")
+        document.dispatchEvent(customEvent)
       }
       else {
         console.log("Post request failed!")

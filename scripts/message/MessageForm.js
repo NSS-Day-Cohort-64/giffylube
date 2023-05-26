@@ -50,8 +50,7 @@ to save messages sent through the form
                 setMessage(messageObject)    
                 await saveMessage()
                 setView("defaultView")
-                const customEvent = new CustomEvent("stateChanged")
-                document.dispatchEvent(customEvent)
+                
             }
             /* 
             Once we created the messageObject to manipulate the transient state which 
