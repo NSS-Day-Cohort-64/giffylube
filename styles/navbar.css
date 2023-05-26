@@ -15,7 +15,7 @@
     background: rgb(171,221,255);
     background: linear-gradient(90deg, rgba(171,221,255,1) 14%, rgba(115,239,250,1) 46%, rgba(0,212,255,1) 88%);
     margin: -10px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .navButtons {
@@ -45,12 +45,13 @@
     padding: 0px 10px 0px 10px;
     font-family: 'Figtree', sans-serif;
     color: rgba(54, 54, 53, 0.90);
-    background-color: lightcyan;
+    background-color: whitesmoke;
     font-size: 20px;
     box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #logout:hover {   
     opacity: 0.7;   
+    cursor: pointer;
 }  
 
 #inbox {
@@ -59,13 +60,14 @@
     border: 2px solid rgb(255, 0, 0);  
     font-family: 'Figtree', sans-serif;
     color: rgba(54, 54, 53, 0.90);
-    background-color: lightcyan;
+    background-color: whitesmoke;
     font-size: 20px;
     padding: 10px 5px 10px 5px;
     box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #inbox:hover {   
-    opacity: 0.7;   
+    opacity: 0.7;
+    cursor: pointer;   
 }  
 
 #logo {
@@ -79,7 +81,8 @@
     box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #logo:hover {   
-    opacity: 0.7;   
+    opacity: 0.7; 
+    cursor: pointer;  
 }  
 
 #sendMessagePen {
@@ -92,4 +95,5 @@
 }
 #sendMessagePen:hover {   
     opacity: 0.7;   
+    cursor: pointer;
 }  

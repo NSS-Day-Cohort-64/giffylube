@@ -1,0 +1,15 @@
+.favorite-button {
+    background: linear-gradient(to right, red, orange, rgb(255, 200, 0), green, blue, indigo, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border: 2px solid rgb(255, 0, 166);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .favorite-button:hover {
+    text-decoration: underline;
+  }
+  
