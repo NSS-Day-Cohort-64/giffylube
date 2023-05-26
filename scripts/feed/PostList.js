@@ -6,8 +6,12 @@ import { PostInteraction } from './PostInteraction.js';
 export const PostList = async () => {
   // retrieve posts, likes, and users
   const posts = await fetchPosts();
+  posts.reverse();
   const likes = await fetchLikes();
   const users = await fetchUsers();
+
+  // reverse the order of the posts (newest first)
+
 
   // retrieve the current user
   const userId = getCurrentUser();
