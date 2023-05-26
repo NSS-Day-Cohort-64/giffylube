@@ -36,8 +36,7 @@ export const GiffyLube = async () => {
         //2. If transientState.view===createMessage, then invoke function that generates all the HTML for the create message page and add it to the htmlString
         if (view === "createMessage") {
             htmlList += `<section class="messageForm"
-                >${messageForm}<
-                /section>`
+                >${messageForm}</section>`
         }
 
         //3. If transientState.view===postGif, then invoke function that generates all the HTML for the new post page and add it to the htmlString

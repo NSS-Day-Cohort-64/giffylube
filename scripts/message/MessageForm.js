@@ -31,21 +31,22 @@ to save messages sent through the form
              if(clickEvent.target.id === "sendMessageForm") {
                 let message = document.getElementById("messageForm").value
                 let currentUser = getCurrentUser()
-                let recipientId = document.getElementById("chooseRecipient").value
+                let recipientId = document.getElementById("messageRecipientDropdown").value
+                //We want to target the value whole select element, and then get the 'values' will come from each option
         
                 let messageObject = {
                 "userId": currentUser.userId,
-                "recipientId": recipientId,
+                "recipientId": parseInt(recipientId),
                 "read": false,
                 "text": message
             }        
                 setMessage(messageObject)    
                 await saveMessage()
-                setView(defaultView)
+                setView("defaultView")
             }
 
             else if(clickEvent.target.id === "cancelMessageForm") {
-                setView(defaultView)
+                setView("defaultView")
                 const customEvent = new CustomEvent("stateChanged")
                 document.dispatchEvent(customEvent)
             }
@@ -69,7 +70,7 @@ to save messages sent through the form
             <select id="messageRecipientDropdown"> 
             <option value="0">List of Users`
             for (const user of users) {
-              html +=  `<option value = "${user.id}" id = "chooseRecipient" >${user.name}</option>`
+              html +=  `<option value ="${user.id}">${user.name}</option>`
             }
         
             document.addEventListener("click", sendMessageButtonLink)
@@ -77,12 +78,10 @@ to save messages sent through the form
         
         html += `</select></section>
         <section>
-        <label for="username">Name:</label><br>
-        <input type="text" id="name"><br>
         <label for="text">Subject:</label><br>
         <input type="text" id="subject"><br>
         <label for="messageForm">Message:</label><br>
-        <input type="text" id="message"><br>
+        <input type="text" id="messageForm"><br>
         <button id="sendMessageForm">Send</button>
         <button id="cancelMessageForm">Cancel</button>
         </section>
