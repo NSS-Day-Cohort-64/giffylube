@@ -123,8 +123,8 @@ export const resetTransientState = () => {
 
   
 // for PostInteraction module:
-    // favoritePost
-    // deletePost
+    // deletePost - how to make this one?
+
 ///////////////////////////////
     // clearFilters??
     // markAllMessagesRead???
