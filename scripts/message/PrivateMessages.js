@@ -1,4 +1,4 @@
-import { fetchMessages, fetchUsers, getCurrentUser } from '../data/TransientState.js';
+import { fetchMessages, fetchUsers, getCurrentUser, setView } from '../data/TransientState.js';
 
 export const MessageList = async () => {
   const messages = await fetchMessages();
@@ -19,7 +19,7 @@ export const MessageList = async () => {
       <div class="message">
         <span class="user">From: ${senderName}</span>
         <p class="message-text">${text}</p>
-        <button class="reply-button">REPLY</button>
+        <button class="reply-button" id="reply">REPLY</button>
       </div>
     `;
 
@@ -28,17 +28,18 @@ export const MessageList = async () => {
 
   const resultString = htmlStrings.join('');
 
-  const container = document.createElement('div');
-  container.innerHTML = resultString;
+  return resultString
 
-  const replyButtons = container.querySelectorAll('.reply-button');
-  replyButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      setView('createMessage');
-      const customEvent = new CustomEvent('stateChanged');
-      document.dispatchEvent(customEvent);
-    });
-  });
-
-  return container;
 };
+
+const clickReply = (clickEvent) => {
+  if (clickEvent.target.id === "reply") {
+    setView("createMessage")
+
+    const customEvent = new CustomEvent("stateChanged")
+    document.dispatchEvent(customEvent)
+
+  }
+}
+//listen for event
+document.addEventListener("click", clickReply)
