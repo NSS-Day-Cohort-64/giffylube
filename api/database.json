@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "users": [
     {
       "id": 1,
@@ -47,42 +46,8 @@
       "recipientId": 1,
       "read": false,
       "text": "how you doin'?"
-    },
-    {
-      "userId": 4,
-      "recipientId": null,
-      "read": false,
-      "text": "adfsaf",
-      "id": 4
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "asdf",
-      "id": 5
-    },
-    {
-      "userId": 4,
-      "recipientId": 1,
-      "read": false,
-      "text": "asdf",
-      "id": 6
-    },
-    {
-      "userId": 4,
-      "recipientId": 0,
-      "read": false,
-      "text": "DSadsDSdsa",
-      "id": 7
-    },
-    {
-      "userId": 4,
-      "recipientId": 3,
-      "read": false,
-      "text": "alsfjas",
-      "id": 8
     }
+
   ],
   "likes": [
     {
@@ -121,89 +86,4 @@
       "year": 2023
     }
   ]
-=======
-    "users": [
-        {
-            "id": 1,
-            "name": "Daddy",
-            "email": "giffydaddy@giffydads.co.uk",
-            "password": "purplebeard"
-        },
-        {
-            "id": 2,
-            "name": "Sarah",
-            "email": "Sarah@giffylube.com",
-            "password": "peanutbutter"
-        },
-        {
-            "id": 3,
-            "name": "Alice Ecila",
-            "email": "lilbballchic229@aol.com",
-            "password": "slamdunk"
-        },
-        {
-            "id": 4,
-            "name": "Mommy Myers",
-            "email": "momsgotitrough@aol.com",
-            "password": "donthavekids!"
-        }
-    ],
-    "messages": [
-        {
-            "userId": 2,
-            "recipientId": 3,
-            "read": false,
-            "text": "hey good lookin"
-        },
-        {
-            "userId": 3,
-            "recipientId": 4,
-            "read": false,
-            "text": "i like it, i love it"
-        },
-        {
-            "userId": 4,
-            "recipientId": 1,
-            "read": false,
-            "text": "how you doin'?"
-        }
-    ],
-    "likes": [
-        {
-            "userId": 2,
-            "postId": 1
-        },
-        {
-            "userId": 4,
-            "postId": 3
-        },
-        {
-            "userId": 1,
-            "postId": 2
-        }
-    ],
-    "posts": [
-        {
-            "userId": 2,
-            "title": "blah blah",
-            "description": "description here",
-            "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RlYzRlMmQ5N2FmZGQwMmU4MzQxYzhkZjI1MDZkZGRjM2VmOWY4MCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Z9WQLSrsQKH3uBbiXq/giphy.gif",
-            "year": 2022
-        },
-        {
-            "userId": 1,
-            "title": "woot woot",
-            "description": "description here",
-            "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3YjAxMmE5YmQzZWJlZDVhODZiMDQwYjJhNTMyNGZlZWQyYTBjMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/2A75RyXVzzSI2bx4Gj/giphy.gif",
-            "year": 1999
-        },
-        {
-            "userId": 4,
-            "title": "bing bong",
-            "description": "description here",
-            "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmVjMzNiMGMyYjdkMjNhYjVlM2UxOTkxNTJjNmQzZWYyMDFiOWE1MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1d7F9xyq6j7C1ojbC5/giphy.gif",
-            "year": 2023
-        }
-    ]
->>>>>>> main
 }
