@@ -30,6 +30,13 @@ to save messages sent through the form
         const sendMessageButtonLink = async (clickEvent) => {
              if(clickEvent.target.id === "sendMessageForm") {
                 let message = document.getElementById("messageForm").value
+                /* the document.getElementById function is explaining the specific
+                spot we want to target in the document. We are targetting message form,
+                but we must include the .value property to say that we want to target
+                the contents of said property. For example, the "messageForm.value" will 
+                be the message itself since line 88 highlights the message. Now the variable message
+                will be the message that is sent. On line 48, we are sending the message to the database.
+                */
                 let currentUser = getCurrentUser()
                 let recipientId = document.getElementById("messageRecipientDropdown").value
                 //We want to target the value whole select element, and then get the 'values' will come from each option
@@ -44,6 +51,11 @@ to save messages sent through the form
                 await saveMessage()
                 setView("defaultView")
             }
+            /* 
+            Once we created the messageObject to manipulate the transient state which 
+            is to be sent to the API database, we must invoke the setMessage with a property
+            of messageObject to alter the transient state. 
+            */
 
             else if(clickEvent.target.id === "cancelMessageForm") {
                 setView("defaultView")
