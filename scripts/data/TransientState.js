@@ -122,11 +122,13 @@ export const resetTransientState = () => {
   }
 
   
-// exports a bunch of functions:
+// for PostInteraction module:
     // favoritePost
-    // clearFilters
+    // deletePost
+///////////////////////////////
+    // clearFilters??
     // markAllMessagesRead???
-    // toggleFavoritesOnly
+    // toggleFavoritesOnly??
 
     
 ////////////////////SAVER FUNCTIONS (POST REQUESTS)////////////////////////////

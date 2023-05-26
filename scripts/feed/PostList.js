@@ -5,7 +5,7 @@ and generates HTML for each post using the `Post` component returned as a string
 
 // import getLikes, getPosts, getUsers from ./data/TransientState.js
 import { fetchLikes, fetchPosts, fetchUsers } from '../data/TransientState.js';
-// import { PostInteraction } from './PostInteraction.js';
+import { PostInteraction } from './PostInteraction.js';
 
 // declare and export PostList function
 export const PostList = async () => {
@@ -38,6 +38,7 @@ export const PostList = async () => {
         <div class="post-interactions">
           <div class="user">${userName}</div>
         <div class="likes">Likes: ${likesCount}</div>
+        ${PostInteraction(post.postId)}
        </div>
       </div>
     `;
