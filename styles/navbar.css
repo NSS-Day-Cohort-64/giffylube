@@ -31,7 +31,7 @@
     flex-direction: column;
 }
 #usernameDisplay {
-    margin: 5px;
+    margin: 5px 5px 0px 5px;
     font-family: 'Figtree', sans-serif;
     color: rgba(54, 54, 53, 0.90);
     font-size: 20px;
@@ -39,7 +39,7 @@
 }
 
 #logout {
-    margin: 5px;
+    margin: 0px 5px 5px 5px;
     border-radius: 5%;
     border: 2px solid rgb(255, 0, 0); 
     padding: 0px 10px 0px 10px;
@@ -47,6 +47,7 @@
     color: rgba(54, 54, 53, 0.90);
     background-color: lightcyan;
     font-size: 20px;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #logout:hover {   
     opacity: 0.7;   
@@ -60,6 +61,8 @@
     color: rgba(54, 54, 53, 0.90);
     background-color: lightcyan;
     font-size: 20px;
+    padding: 10px 5px 10px 5px;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #inbox:hover {   
     opacity: 0.7;   
@@ -72,8 +75,8 @@
     margin-left: 10px;
     border-radius: 40%;
     border: 2px solid rgb(255, 0, 0); 
-    padding-bottom: 10px;
     justify-content: flex-start;
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
 }
 #logo:hover {   
     opacity: 0.7;   
@@ -84,6 +87,8 @@
     height: auto;
     border-radius: 20%;
     border: 2px solid rgb(255, 0, 0); 
+    box-shadow: -2px 2px 5px rgba(47, 79, 79, 0.5);
+
 }
 #sendMessagePen:hover {   
     opacity: 0.7;   
