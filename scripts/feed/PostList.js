@@ -36,7 +36,7 @@ export const PostList = async () => {
           <h2>${title}</h2>
           <p>${description}</p>
           <img src="${imageUrl}" alt="Post Image" />
-          <p>Year: ${year}</p>
+          <p>Posted at ${year}</p>
         </div>
         <div class="post-interactions">
           <div class="user">${userName}</div>
