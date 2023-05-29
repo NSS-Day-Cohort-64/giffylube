@@ -25,8 +25,8 @@ const handleFavoriteButtonClick = (event) => {
 // Add the event listener for the favorite button
 document.addEventListener('click', handleFavoriteButtonClick);
 
-// declare and export PostInteraction function
-export const PostInteraction = (postId) => {
+// declare and export favoritePost function
+export const favoritePost = (postId) => {
   return `
     <div class="post-interaction">
       <button class="favorite-button" data-postid="${postId}">FAVORITE</button>

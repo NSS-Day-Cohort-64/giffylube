@@ -1,6 +1,6 @@
 // Import the necessary functions from '../data/TransientState.js'
 import { fetchLikes, fetchPosts, fetchUsers, setLike, saveLike, getCurrentUser } from '../data/TransientState.js';
-import { PostInteraction } from './PostInteraction.js';
+import { favoritePost } from './PostInteraction.js';
 
 // declare and export PostList function
 export const PostList = async () => {
@@ -41,7 +41,7 @@ export const PostList = async () => {
         <div class="post-interactions">
           <div class="user">${userName}</div>
           <div class="likes">Likes: ${likesCount}</div>
-          ${PostInteraction(postId)}
+          ${favoritePost(postId)}
         </div>
       </div>
     `;
