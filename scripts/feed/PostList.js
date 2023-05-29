@@ -17,7 +17,7 @@ export const PostList = async () => {
   // generate HTML for each post
   const htmlStrings = posts.map((post) => {
     // extract necessary data from the post object using destructuring
-    const { postId, userId: postUserId, title, description, imageUrl, year } = post;
+    const { id: postId, userId: postUserId, title, description, imageUrl, year } = post;
 
     // retrieve the user who made the post
     const user = users.find((user) => user.userId === postUserId);
