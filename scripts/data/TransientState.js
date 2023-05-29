@@ -217,3 +217,19 @@ export const saveLike = async () => {
   document.dispatchEvent(customEvent)
 
 }
+
+export const deleteLike = async (likeId) => {
+  // Define a deleteOptions object to specify a DELETE request to the API
+  const deleteOptions = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  // Send the DELETE request to the API with the specific likeId
+  await fetch(`http://localhost:8088/likes/${likeId}`, deleteOptions);
+
+  const customEvent = new CustomEvent("stateChanged");
+  document.dispatchEvent(customEvent);
+};
