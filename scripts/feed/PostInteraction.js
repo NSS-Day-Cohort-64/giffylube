@@ -34,4 +34,13 @@ export const favoritePost = (postId) => {
   `;
 };
 
+// declare and export unFavoritePost function
+export const unFavoritePost = (likeId) => {
+  return `
+    <div class="post-interaction">
+      <span>⭐You favorited this post⭐ </span><button class="unfavorite-button" data-postid="${likeId}">UNDO FAVORITE</button>
+    </div>
+  `;
+};
+
 // <button class="delete-button" data-postid="${postId}">DELETE</button>
