@@ -27,7 +27,7 @@ export const PostList = async () => {
     const likesCount = postLikes.length;
 
     // check if the current user has already liked this post
-    const userLiked = likes.some((like) => like.userId === userId && like.postId === postId);
+    const userLiked = likes.some((like) => like.userId === currentUser.userId && like.postId === postId);
 
     // generate HTML for the Post component and interactions
     const postHtml = `
