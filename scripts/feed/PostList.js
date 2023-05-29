@@ -51,20 +51,6 @@ export const PostList = async () => {
 
   // combine HTML strings for all posts
   const resultString = htmlStrings.join('');
-
-  // handle favorite button click event
-  const handleFavoriteButtonClick = (event) => {
-    if (event.target.classList.contains('favorite-button')) {
-      const postId = event.target.dataset.postId;
-      const userId = getCurrentUser();
-      const likeObject = { userId, postId };
-
-      setLike(likeObject);
-      saveLike();
-    }
-  };
-
-  document.addEventListener('click', handleFavoriteButtonClick);
-
+  
   return resultString;
 };
