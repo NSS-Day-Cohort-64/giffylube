@@ -20,7 +20,7 @@ export const PostList = async () => {
     const { id: postId, userId: postUserId, title, description, imageUrl, year } = post;
 
     // retrieve the user who made the post
-    const user = users.find((user) => user.userId === postUserId);
+    const user = users.find((user) => user.id === postUserId);
     const userName = user ? user.name : 'Unknown User';
 
     const postLikes = likes.filter((like) => like.postId === postId);
