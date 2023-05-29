@@ -1,4 +1,4 @@
-import { getCurrentUser, saveLike, setLike } from "../data/TransientState.js";
+import { deleteLike, getCurrentUser, saveLike, setLike } from "../data/TransientState.js";
 
 
 // handle favorite button click event
@@ -22,8 +22,24 @@ const handleFavoriteButtonClick = (event) => {
   }
 };
 
+// handle unFavorite button click event
+const handleUnFavoriteButtonClick = (event) => {
+  if (event.target.classList.contains('unfavorite-button')) {
+    const matchingLikeId = parseInt(event.target.dataset.likeid);
+    //Log like id to console to check functionality
+    console.log("Here is the like id to be deleted")
+    console.log(matchingLikeId)
+
+    // DELETE like from the API
+    deleteLike(matchingLikeId);
+  }
+};
+
 // Add the event listener for the favorite button
 document.addEventListener('click', handleFavoriteButtonClick);
+
+// Add the event listener for the unFavorite button
+document.addEventListener('click', handleUnFavoriteButtonClick);
 
 // declare and export favoritePost function
 export const favoritePost = (postId) => {
@@ -38,7 +54,7 @@ export const favoritePost = (postId) => {
 export const unFavoritePost = (likeId) => {
   return `
     <div class="post-interaction">
-      <span>⭐You favorited this post⭐ </span><button class="unfavorite-button" data-postid="${likeId}">UNDO FAVORITE</button>
+      <span>⭐You favorited this post⭐ </span><button class="unfavorite-button" data-likeid="${likeId}">UNDO FAVORITE</button>
     </div>
   `;
 };
