@@ -13,7 +13,7 @@ const initialTransientState = {
     "title": "",
     "description": "",
     "imageUrl": "",
-    "year": 0
+    "time": ""
   },
   "message": {
     "userId": 0,
@@ -64,7 +64,7 @@ export const setPost = (postObject) => {
   transientState.post.title = postObject.title
   transientState.post.description = postObject.description
   transientState.post.imageUrl = postObject.imageUrl
-  transientState.post.year = postObject.year
+  transientState.post.time = postObject.time
 
 }
 

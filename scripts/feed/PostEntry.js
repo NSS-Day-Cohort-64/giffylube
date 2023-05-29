@@ -72,7 +72,7 @@ document.addEventListener(
                 "title": postTitle,
                 "description": postDesc,
                 "imageUrl": postUrl,
-                "year": postTime
+                "time": postTime
             }
             
             // Send the post to transientState
