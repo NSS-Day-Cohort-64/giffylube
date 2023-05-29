@@ -47,10 +47,9 @@ export const PostList = async () => {
           <h2>${title}</h2>
           <p>${description}</p>
           <img src="${imageUrl}" alt="Post Image" />
-          <p>Posted at ${time}</p>
+          <p>Posted at ${time} by ${userName}</p>
         </div>
         <div class="post-interactions">
-          <div class="user">${userName}</div>
           <div class="likes">Likes: ${likesCount}</div>
           ${favoriteButtonUI}
         </div>
