@@ -12,4 +12,17 @@
   .favorite-button:hover {
     text-decoration: underline;
   }
+
+  .unfavorite-button {
+    background-color: lightblue;
+    border: none;
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .unfavorite-button:hover {
+    cursor: pointer;
+    color: firebrick;
+    opacity: 0.8;
+  }
   

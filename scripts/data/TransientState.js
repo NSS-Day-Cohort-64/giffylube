@@ -13,7 +13,7 @@ const initialTransientState = {
     "title": "",
     "description": "",
     "imageUrl": "",
-    "year": 0
+    "time": ""
   },
   "message": {
     "userId": 0,
@@ -64,7 +64,7 @@ export const setPost = (postObject) => {
   transientState.post.title = postObject.title
   transientState.post.description = postObject.description
   transientState.post.imageUrl = postObject.imageUrl
-  transientState.post.year = postObject.year
+  transientState.post.time = postObject.time
 
 }
 
@@ -128,6 +128,21 @@ export const fetchMessages = async () => {
 // markAllMessagesRead???
 // toggleFavoritesOnly
 
+////////////////////USER INPUT VALIDATION//////////////////////////////////////
+
+// Function that checks if a URL points to a GIF
+const isGifUrl = async (url) => {
+
+  //Check if the link is valid
+  const response = await fetch(url, { method: 'HEAD' });
+  if (!response.ok) {
+    return false;
+  }
+  
+  // if the url links to a gif, return true, else, return false
+  const contentType = response.headers.get('content-type');
+  return contentType === 'image/gif';
+};
 
 ////////////////////SAVER FUNCTIONS (POST REQUESTS)////////////////////////////
 
@@ -168,8 +183,10 @@ export const saveMessage = async () => {
 
 //savePost
 export const savePost = async () => {
+  // Check if the url points to a gif. The isGifUrl function will return true or false
+  const isGif = await isGifUrl(transientState.post.imageUrl)
   // Check to make sure all information is entered
-  if (transientState.post.imageUrl.length > 0 && transientState.post.title.length > 0 && transientState.post.description.length > 0) {
+  if (transientState.post.imageUrl.length > 0 && transientState.post.title.length > 0 && transientState.post.description.length > 0 && isGif === true) {
     // Define a postOptions object to specify a POST to the database
     const postOptions = {
       method: "POST",
@@ -195,7 +212,11 @@ export const savePost = async () => {
         window.alert("Something went wrong")
       }
     }).catch(error => { console.error("An error occurred:", error); })
+  } else if (transientState.post.imageUrl.length > 0 && transientState.post.title.length > 0 && transientState.post.description.length > 0 && isGif === false) {
+    // If user input is filled in, but the url is invalid, print a window alert
+    window.alert("URL provided is either invalid or does not point to a gif image")
   } else {
+    // If any user input is blank, print a window alert
     window.alert("Please enter a title, gif url, and description")
   }
 }
@@ -217,3 +238,19 @@ export const saveLike = async () => {
   document.dispatchEvent(customEvent)
 
 }
+
+export const deleteLike = async (likeId) => {
+  // Define a deleteOptions object to specify a DELETE request to the API
+  const deleteOptions = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  // Send the DELETE request to the API with the specific likeId
+  await fetch(`http://localhost:8088/likes/${likeId}`, deleteOptions);
+
+  const customEvent = new CustomEvent("stateChanged");
+  document.dispatchEvent(customEvent);
+};
